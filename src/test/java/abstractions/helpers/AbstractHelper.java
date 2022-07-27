@@ -5,7 +5,7 @@ import abstractions.utils.DriverWaits;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
-public class AbstractHelper {
+public class AbstractHelper{
 
     private final DriverManager driverManager = new DriverManager();
     private final DriverWaits driverWait = new DriverWaits(driverManager);

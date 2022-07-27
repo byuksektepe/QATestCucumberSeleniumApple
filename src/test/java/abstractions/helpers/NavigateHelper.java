@@ -7,6 +7,9 @@ public class NavigateHelper extends AbstractHelper{
     private WebDriver driver = getDriver();
 
     public void navigateToTargetUrl(){
+
         driver.navigate().to(TargetUrl);
+        getDriverWait().waitUntilJSReady();
+
     }
 }

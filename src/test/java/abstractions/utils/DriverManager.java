@@ -27,7 +27,7 @@ public class DriverManager {
      * Default driver is edge. because pre-installed in windows devices.
      * @return webdriver
      */
-    private static WebDriver choseDriver() {
+    private WebDriver choseDriver() {
         String preferredDriver = SelectedBrowser;
         boolean headless = IsHeadless;
 

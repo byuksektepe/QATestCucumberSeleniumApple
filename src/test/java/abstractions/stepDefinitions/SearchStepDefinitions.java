@@ -13,9 +13,11 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 public class SearchStepDefinitions extends AbstractHelper{
 
+    private final NavigateHelper navigateHelper = new NavigateHelper();
+
     @Given("^Navigate to Apple's site$")
     public void navigeToApplesSite(){
-
+        navigateHelper.navigateToTargetUrl();
     }
 
     @And("search for product or item {string} in search bar")

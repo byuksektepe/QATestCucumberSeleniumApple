@@ -1,11 +1,7 @@
 package abstractions.utils;
 
-import abstractions.utils.expectedConditions.ClickabilityOfElement;
-import abstractions.utils.expectedConditions.ClickabilityOfElementByLocator;
-import abstractions.utils.expectedConditions.InvisibilityOfElement;
-import abstractions.utils.expectedConditions.InvisibilityOfElementByLocator;
-import abstractions.utils.expectedConditions.VisibilityOfElement;
-import abstractions.utils.expectedConditions.VisibilityOfElementByLocator;
+import abstractions.utils.expectedConditions.*;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.ScriptTimeoutException;
@@ -35,7 +31,7 @@ public class DriverWaits {
     /**
      * wait for element visible by element
      */
-    private void waitForElementVisible(WebElement element) {
+    public void waitForElementVisible(WebElement element) {
         try {
             waitLong().until(new VisibilityOfElement(element));
         } catch (Exception ignored) {
@@ -45,7 +41,7 @@ public class DriverWaits {
     /**
      * wait for element visible by locator
      */
-    private void waitForElementVisible(By locator) {
+    public void waitForElementVisible(By locator) {
         try {
             waitLong().until(new VisibilityOfElementByLocator(locator));
         } catch (Exception ignored) {
@@ -55,7 +51,7 @@ public class DriverWaits {
     /**
      * wait for element Invisible by locator
      */
-    private void waitForElementInVisible(By locator) {
+    public void waitForElementInVisible(By locator) {
         try {
             new InvisibilityOfElementByLocator(locator);
         } catch (Exception ignored) {
@@ -65,7 +61,7 @@ public class DriverWaits {
     /**
      * wait for element Invisible by locator
      */
-    private void waitForElementInVisible(WebElement element) {
+    public void waitForElementInVisible(WebElement element) {
         try {
             new InvisibilityOfElement(element);
         } catch (Exception ignored) {
@@ -75,7 +71,7 @@ public class DriverWaits {
     /**
      * wait for element clickable by element
      */
-    private void waitForElementClickable(WebElement element) throws NoSuchFieldException {
+    public void waitForElementClickable(WebElement element) throws NoSuchFieldException {
         try {
             new ClickabilityOfElement(element);
         } catch (Exception t) {
@@ -86,7 +82,7 @@ public class DriverWaits {
     /**
      * wait for element clickable by locator
      */
-    private void waitForElementClickable(By locator) throws NoSuchFieldException {
+    public void waitForElementClickable(By locator) throws NoSuchFieldException {
         try {
             new ClickabilityOfElementByLocator(locator);
         } catch (Exception t) {
@@ -109,7 +105,7 @@ public class DriverWaits {
     }
 
 
-    private void waitUntilJSReady() {
+    public void waitUntilJSReady() {
         final ExpectedCondition<Boolean> jsLoad = driver -> ((JavascriptExecutor) driverManager.getDriver())
                 .executeScript("return document.readyState")
                 .toString()
@@ -123,7 +119,7 @@ public class DriverWaits {
         }
     }
 
-    private void waitForJQueryLoad() {
+    public void waitForJQueryLoad() {
         final ExpectedCondition<Boolean> jQueryLoad = driver -> (
                 (Long) ((JavascriptExecutor) driverManager.getDriver()).executeScript("return jQuery.active") == 0);
 
