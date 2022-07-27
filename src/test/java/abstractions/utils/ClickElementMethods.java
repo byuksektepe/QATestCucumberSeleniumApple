@@ -20,4 +20,11 @@ public class ClickElementMethods extends AbstractHelper implements Infrastructur
         JavascriptExecutor js = (JavascriptExecutor) getDriver();
         js.executeScript("arguments[0].click();", element);
     }
+
+    public void doubleClick(String locatorType, String locatorValue) {
+        element = getDriverWait().waitShort().until(ExpectedConditions.presenceOfElementLocated(selectElementByType.getelementbytype(locatorType, locatorValue)));
+
+        Actions action = new Actions(getDriver());
+        action.moveToElement(element).doubleClick().perform();
+    }
 }
