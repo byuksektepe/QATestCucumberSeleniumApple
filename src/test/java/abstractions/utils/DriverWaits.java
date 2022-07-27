@@ -109,21 +109,6 @@ public class DriverWaits {
     }
 
 
-    private void waitForAngularLoad() {
-
-        final String angularReadyScript = "return angular.element(document).injector().get('$http').pendingRequests.length === 0";
-
-        final ExpectedCondition<Boolean> angularLoad = driver -> Boolean.valueOf(
-                ((JavascriptExecutor) driverManager.getDriver()).executeScript(angularReadyScript).toString());
-
-        boolean angularReady = Boolean
-                .parseBoolean(((JavascriptExecutor) driverManager.getDriver()).executeScript(angularReadyScript).toString());
-
-        if (!angularReady) {
-            waitLong().until(angularLoad);
-        }
-    }
-
     private void waitUntilJSReady() {
         final ExpectedCondition<Boolean> jsLoad = driver -> ((JavascriptExecutor) driverManager.getDriver())
                 .executeScript("return document.readyState")

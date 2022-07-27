@@ -1,6 +1,7 @@
 package abstractions.stepDefinitions;
 
 import abstractions.helpers.AbstractHelper;
+import abstractions.helpers.NavigateHelper;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.When;
@@ -13,7 +14,7 @@ import org.junit.runner.RunWith;
 public class SearchStepDefinitions extends AbstractHelper{
 
     @Given("^Navigate to Apple's site$")
-    public void should_logged_in(){
+    public void navigeToApplesSite(){
 
     }
 
