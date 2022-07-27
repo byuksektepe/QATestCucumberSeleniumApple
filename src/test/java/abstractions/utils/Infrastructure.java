@@ -1,5 +1,6 @@
 package abstractions.utils;
 
 public interface Infrastructure {
-    ClickElementMethods clickEl = new ClickElementMethods();
+    ClickElementMethods clickMethods = new ClickElementMethods();
+    InputMethods inputMethods = new InputMethods();
 }

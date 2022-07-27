@@ -10,8 +10,8 @@ public class ClickElementMethods extends AbstractHelper implements Infrastructur
     private final SelectElementByType selectElementByType = new SelectElementByType();
     private WebElement element = null;
 
-    public void click(String accessType, String accessName) {
-        element = getDriverWait().waitShort().until(ExpectedConditions.presenceOfElementLocated(selectElementByType.getelementbytype(accessType, accessName)));
+    public void click(String locatorType, String locatorValue) {
+        element = getDriverWait().waitShort().until(ExpectedConditions.presenceOfElementLocated(selectElementByType.getelementbytype(locatorType, locatorValue)));
         element.click();
     }
 }

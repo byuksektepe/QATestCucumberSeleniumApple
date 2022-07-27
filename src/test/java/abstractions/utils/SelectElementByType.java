@@ -4,24 +4,24 @@ import org.openqa.selenium.By;
 
 public class SelectElementByType {
 
-    public By getelementbytype(String type, String access_name) {
+    public By getelementbytype(String type, String value) {
         switch (type) {
-            case "id":
-                return By.id(access_name);
-            case "name":
-                return By.name(access_name);
-            case "class":
-                return By.className(access_name);
-            case "xpath":
-                return By.xpath(access_name);
-            case "css":
-                return By.cssSelector(access_name);
-            case "linkText":
-                return By.linkText(access_name);
-            case "partialLinkText":
-                return By.partialLinkText(access_name);
-            case "tagName":
-                return By.tagName(access_name);
+            case Locators.Id:
+                return By.id(value);
+            case Locators.Name:
+                return By.name(value);
+            case Locators.Class:
+                return By.className(value);
+            case Locators.XPath:
+                return By.xpath(value);
+            case Locators.CSS:
+                return By.cssSelector(value);
+            case Locators.LinkText:
+                return By.linkText(value);
+            case Locators.PartialLinkText:
+                return By.partialLinkText(value);
+            case Locators.TagName:
+                return By.tagName(value);
             default:
                 return null;
 
