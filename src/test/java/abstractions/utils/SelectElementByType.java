@@ -24,7 +24,6 @@ public class SelectElementByType {
                 return By.tagName(value);
             default:
                 return null;
-
         }
     }
 }

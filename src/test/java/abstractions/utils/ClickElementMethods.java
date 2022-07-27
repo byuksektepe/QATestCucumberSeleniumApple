@@ -14,4 +14,10 @@ public class ClickElementMethods extends AbstractHelper implements Infrastructur
         element = getDriverWait().waitShort().until(ExpectedConditions.presenceOfElementLocated(selectElementByType.getelementbytype(locatorType, locatorValue)));
         element.click();
     }
+
+    public void forceClick(String locatorType, String locatorValue) {
+        element = getDriverWait().waitShort().until(ExpectedConditions.presenceOfElementLocated(selectElementByType.getelementbytype(locatorType, locatorValue)));
+        JavascriptExecutor js = (JavascriptExecutor) getDriver();
+        js.executeScript("arguments[0].click();", element);
+    }
 }
