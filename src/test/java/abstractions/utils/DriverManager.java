@@ -20,14 +20,16 @@ import java.util.Properties;
 
 public class DriverManager {
     private static WebDriver driver;
+    private static final String SelectedBrowser = "chrome";
+    private static final Boolean IsHeadless = false;
 
     /**
      * Default driver is edge. because pre-installed in windows devices.
      * @return webdriver
      */
     private static WebDriver choseDriver() {
-        String preferredDriver = "chrome";
-        boolean headless = false;
+        String preferredDriver = SelectedBrowser;
+        boolean headless = IsHeadless;
 
         switch (preferredDriver.toLowerCase()) {
             case "safari":
