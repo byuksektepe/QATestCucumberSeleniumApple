@@ -1,14 +1,14 @@
 package abstractions.pageObjects;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.How;
+import abstractions.utils.IUtils;
+import org.openqa.selenium.NoSuchElementException;
+import abstractions.utils.Locators;
 
-import abstractions.utils.Infrastructure;
+public class Navbar implements IUtils {
 
-public class Navbar implements Infrastructure{
+    private static final String NavbarVerifyLocator = "//nav[@id='ac-globalnav']";
     public void VerifyNavbarIsVisible(){
-
+        Boolean NavbarVerify = assertionMethods.isElementDisplayed(Locators.XPath, NavbarVerifyLocator);
+        if(!NavbarVerify){ throw new NoSuchElementException("Element Is Not Visible"); }
     }
 }

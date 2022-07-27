@@ -11,9 +11,8 @@ import io.cucumber.junit.Cucumber;
 import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
-public class SearchStepDefinitions extends AbstractHelper{
+public class SearchStepDefinitions extends AbstractHelper implements IStepDefinitions{
 
-    private final NavigateHelper navigateHelper = new NavigateHelper();
 
     @Given("^Navigate to Apple's site$")
     public void navigeToApplesSite(){
@@ -22,6 +21,7 @@ public class SearchStepDefinitions extends AbstractHelper{
 
     @And("search for product or item {string} in search bar")
     public void searchForProductOrItemInSearchBar(String arg0) {
+        navbar.VerifyNavbarIsVisible();
     }
 
     @And("Verify Search executed")
