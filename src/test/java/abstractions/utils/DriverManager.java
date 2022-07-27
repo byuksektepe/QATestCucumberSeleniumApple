@@ -19,16 +19,15 @@ import java.util.Enumeration;
 import java.util.Properties;
 
 public class DriverManager {
-    private static final ThreadLocal<WebDriver> driverThreadLocal = new ThreadLocal<>();
     private static WebDriver driver;
 
     /**
      * Default driver is edge. because pre-installed in windows devices.
      * @return webdriver
      */
-    private static WebDriver setWebDriver() {
-        String preferredDriver = System.getProperty("browser", "Edge");
-        boolean headless = System.getProperty("headless", "false").equals("true");
+    private static WebDriver choseDriver() {
+        String preferredDriver = "chrome";
+        boolean headless = false;
 
         switch (preferredDriver.toLowerCase()) {
             case "safari":
@@ -36,7 +35,6 @@ public class DriverManager {
             case "edge":
                 return new EdgeDriver();
             case "chrome":
-                System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver");
                 final ChromeOptions chromeOptions = new ChromeOptions();
 
                 if (headless) {
@@ -51,7 +49,6 @@ public class DriverManager {
 
                 return new ChromeDriver(chromeOptions);
             case "firefox":
-                System.setProperty("webdriver.gecko.driver", "src/test/resources/drivers/geckodriver");
                 final FirefoxOptions ffOptions = new FirefoxOptions();
 
                 if (headless) {
@@ -63,7 +60,13 @@ public class DriverManager {
         }
     }
 
+    public void setDriver(){
+        driver = choseDriver();
+    }
+    public void destroyDriver(){
+        driver.quit();
+    }
     public WebDriver getDriver() {
-            return driverThreadLocal.get();
+            return driver;
     }
 }
