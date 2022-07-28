@@ -12,6 +12,7 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
 
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -91,17 +92,11 @@ public class DriverWaits {
     }
 
     public Wait<WebDriver> waitLong() {
-        return new FluentWait<>(driverManager.getDriver())
-                .withTimeout(Duration.ofSeconds(Constants.timeoutLong))
-                .pollingEvery(Duration.ofMillis(Constants.pollingLong))
-                .ignoring(NoSuchElementException.class, StaleElementReferenceException.class);
+        return new WebDriverWait(driverManager.getDriver(), Duration.ofSeconds(Constants.timeoutLong));
     }
 
     public Wait<WebDriver> waitShort() {
-        return new FluentWait<>(driverManager.getDriver())
-                .withTimeout(Duration.ofSeconds(Constants.timeoutShort))
-                .pollingEvery(Duration.ofMillis(Constants.pollingShort))
-                .ignoring(NoSuchElementException.class, StaleElementReferenceException.class);
+        return new WebDriverWait(driverManager.getDriver(), Duration.ofSeconds(Constants.timeoutShort));
     }
 
 

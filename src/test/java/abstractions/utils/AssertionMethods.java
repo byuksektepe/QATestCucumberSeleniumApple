@@ -18,7 +18,7 @@ public class AssertionMethods extends AbstractHelper implements IUtils
      * @return Boolean
      */
     public boolean isElementDisplayed(String locatorType, String locatorValue) {
-        element = getDriverWait().waitShort().until(ExpectedConditions.presenceOfElementLocated(selectElementByType.getelementbytype(locatorType, locatorValue)));
+        element = getDriverWait().waitLong().until(ExpectedConditions.presenceOfElementLocated(selectElementByType.getelementbytype(locatorType, locatorValue)));
         return element.isDisplayed();
     }
 
