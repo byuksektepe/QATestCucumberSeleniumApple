@@ -27,13 +27,13 @@ public class AssertionMethods extends AbstractHelper implements IUtils
     }
     public WebElement FindElement(String locatorType, String locatorValue){
 
-        element = getDriverWait().waitLong().until(ExpectedConditions.presenceOfElementLocated(selectElementByType.getelementbytype(locatorType, locatorValue)));
+        element = getDriverWait().waitShort().until(ExpectedConditions.presenceOfElementLocated(selectElementByType.getelementbytype(locatorType, locatorValue)));
         return element;
     }
     public WebElement FindElementAndIgnoreErrors(String locatorType, String locatorValue){
         try
         {
-            return getDriverWait().waitLong().until(ExpectedConditions.presenceOfElementLocated(selectElementByType.getelementbytype(locatorType, locatorValue)));
+            return getDriverWait().waitShort().until(ExpectedConditions.presenceOfElementLocated(selectElementByType.getelementbytype(locatorType, locatorValue)));
         }
         catch (NoSuchElementException e)
         {
