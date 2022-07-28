@@ -4,6 +4,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 
+import static abstractions.utils.Constants.delayShort;
+
 public class AssertionMethods extends AbstractHelper implements IUtils
 {
     private final SelectElementByType selectElementByType = new SelectElementByType();
@@ -19,7 +21,20 @@ public class AssertionMethods extends AbstractHelper implements IUtils
      */
     public boolean isElementDisplayed(String locatorType, String locatorValue) {
         element = getDriverWait().waitLong().until(ExpectedConditions.presenceOfElementLocated(selectElementByType.getelementbytype(locatorType, locatorValue)));
+        isWait(delayShort);
         return element.isDisplayed();
+    }
+
+    public void isWait(int ms)
+    {
+        try
+        {
+            Thread.sleep(ms);
+        }
+        catch(InterruptedException ex)
+        {
+            Thread.currentThread().interrupt();
+        }
     }
 
 }

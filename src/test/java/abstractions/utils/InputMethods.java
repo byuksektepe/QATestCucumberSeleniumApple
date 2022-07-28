@@ -3,7 +3,7 @@ package abstractions.utils;
 import abstractions.helpers.AbstractHelper;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.Keys;
 
 
 public class InputMethods extends AbstractHelper{
@@ -17,9 +17,17 @@ public class InputMethods extends AbstractHelper{
      * @param text       : String : Text value to enter in field
      * @param locatorValue : String : Locator value
      */
+    public void enterTextAndHitEnter(String locatorType, String text, String locatorValue) {
+        getDriverWait().waitShort().until(ExpectedConditions.presenceOfElementLocated(selectElementByType.getelementbytype(locatorType, locatorValue)));
+        WebElement element = getDriver().findElement(selectElementByType.getelementbytype(locatorType, locatorValue));
+        element.sendKeys(text);
+        element.sendKeys(Keys.ENTER);
+    }
+
     public void enterText(String locatorType, String text, String locatorValue) {
         getDriverWait().waitShort().until(ExpectedConditions.presenceOfElementLocated(selectElementByType.getelementbytype(locatorType, locatorValue)));
-        getDriver().findElement(selectElementByType.getelementbytype(locatorType, locatorValue)).sendKeys(text);
+        WebElement element = getDriver().findElement(selectElementByType.getelementbytype(locatorType, locatorValue));
+        element.sendKeys(text);
     }
 
     /**

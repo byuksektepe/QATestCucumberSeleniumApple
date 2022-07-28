@@ -1,19 +1,17 @@
 package abstractions.utils.expectedConditions;
 
+import abstractions.helpers.AbstractHelper;
 import abstractions.utils.Constants;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.FluentWait;
-import org.openqa.selenium.support.ui.Wait;
+import org.openqa.selenium.support.ui.*;
 
 import java.time.Duration;
 
-public class ClickabilityOfElementByLocator implements ExpectedCondition<WebElement> {
+public class ClickabilityOfElementByLocator extends AbstractHelper implements ExpectedCondition<WebElement> {
 
     private final By locator;
 
@@ -24,12 +22,7 @@ public class ClickabilityOfElementByLocator implements ExpectedCondition<WebElem
     @Override
     public WebElement apply(WebDriver webDriver) {
 
-        final Wait<WebDriver> wait = new FluentWait<>(webDriver)
-                .withTimeout(Duration.ofSeconds(Constants.timeoutShort))
-                .pollingEvery(Duration.ofMillis(Constants.pollingShort))
-                .ignoring(java.util.NoSuchElementException.class,
-                        StaleElementReferenceException.class);
-
+        final Wait<WebDriver> wait = new WebDriverWait(getDriver(), Duration.ofSeconds(Constants.timeoutShort));
         try {
             return wait.until(ExpectedConditions.elementToBeClickable(locator));
         } catch (StaleElementReferenceException | NoSuchElementException e) {

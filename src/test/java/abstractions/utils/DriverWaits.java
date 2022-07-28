@@ -1,7 +1,6 @@
 package abstractions.utils;
 
 import abstractions.utils.expectedConditions.*;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.ScriptTimeoutException;
@@ -9,18 +8,14 @@ import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
 
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.time.Duration;
 import java.util.NoSuchElementException;
 
 public class DriverWaits {
-    private final Logger logger = LoggerFactory.getLogger(DriverWaits.class);
 
     private final DriverManager driverManager;
 
@@ -98,7 +93,6 @@ public class DriverWaits {
     public Wait<WebDriver> waitShort() {
         return new WebDriverWait(driverManager.getDriver(), Duration.ofSeconds(Constants.timeoutShort));
     }
-
 
     public void waitUntilJSReady() {
         final ExpectedCondition<Boolean> jsLoad = driver -> ((JavascriptExecutor) driverManager.getDriver())

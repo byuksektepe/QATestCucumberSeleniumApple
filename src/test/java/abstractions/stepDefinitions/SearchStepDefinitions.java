@@ -20,8 +20,10 @@ public class SearchStepDefinitions extends AbstractHelper implements IStepDefini
     }
 
     @And("search for product or item {string} in search bar")
-    public void searchForProductOrItemInSearchBar(String arg0) {
+    public void searchForProductOrItemInSearchBar(String SearchQuery) {
         navbar.VerifyNavbarIsVisible();
+        navbar.ClickSearchButton();
+        navbar.EnterSearchQueryInSearchBar(SearchQuery);
     }
 
     @And("Verify Search executed")
