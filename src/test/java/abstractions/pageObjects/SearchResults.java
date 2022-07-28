@@ -2,11 +2,8 @@ package abstractions.pageObjects;
 
 import abstractions.utils.IUtils;
 import abstractions.utils.Locators;
-import abstractions.utils.StringNotContainsByGivenException;
-import org.junit.platform.commons.JUnitException;
+import abstractions.utils.Exceptions.StringNotContainsByGivenException;
 import org.openqa.selenium.WebElement;
-
-import java.util.Collection;
 
 public class SearchResults implements IUtils{
 

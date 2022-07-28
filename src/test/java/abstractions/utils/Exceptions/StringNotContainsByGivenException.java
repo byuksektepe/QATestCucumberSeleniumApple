@@ -1,4 +1,4 @@
-package abstractions.utils;
+package abstractions.utils.Exceptions;
 
 public class StringNotContainsByGivenException extends Exception {
     public StringNotContainsByGivenException(String Given, String Received) {
