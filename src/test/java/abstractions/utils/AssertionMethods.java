@@ -9,8 +9,6 @@ import static abstractions.utils.Constants.delayShort;
 
 public class AssertionMethods extends AbstractHelper implements IUtils
 {
-    private final SelectElementByType selectElementByType = new SelectElementByType();
-
     private WebElement element = null;
 
     /**
@@ -46,6 +44,11 @@ public class AssertionMethods extends AbstractHelper implements IUtils
         { return false; }
         return true;
     }
+
+    public String getPageTitle() {
+        return getDriver().getTitle();
+    }
+
 
     public void isWait(int ms)
     {

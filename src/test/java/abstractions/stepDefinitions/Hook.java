@@ -14,7 +14,7 @@ public class Hook extends DriverManager{
 
     @After
     public void EndTest(){
-        assertionMethods.isWait(2000);
+        assertionMethods.isWait(1000);
         destroyDriver();
     }
 }

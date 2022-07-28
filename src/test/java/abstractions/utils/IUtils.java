@@ -5,7 +5,9 @@ public interface IUtils {
     InputMethods inputMethods = new InputMethods();
     AssertionMethods assertionMethods = new AssertionMethods();
 
-    DriverManager driverManager = new DriverManager();
+    NavigateMethods navigateMethods = new NavigateMethods();
 
+    DriverManager driverManager = new DriverManager();
     DriverWaits driverWaits = new DriverWaits(driverManager);
+    SelectElementByType selectElementByType = new SelectElementByType();
 }

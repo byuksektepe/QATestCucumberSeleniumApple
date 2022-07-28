@@ -63,7 +63,9 @@ public class DriverManager {
     }
 
     public void setDriver(){
+
         driver = choseDriver();
+        driver.manage().window().maximize();
     }
     public void destroyDriver(){
         driver.quit();
