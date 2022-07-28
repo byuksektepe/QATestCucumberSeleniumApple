@@ -6,4 +6,6 @@ public interface IUtils {
     AssertionMethods assertionMethods = new AssertionMethods();
 
     DriverManager driverManager = new DriverManager();
+
+    DriverWaits driverWaits = new DriverWaits(driverManager);
 }

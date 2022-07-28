@@ -7,7 +7,8 @@ import abstractions.utils.Locators;
 public class Navbar implements IUtils {
 
     private static final String NavbarMainLocator = "//nav[@id='ac-globalnav']";
-    private static final String SearchButtonLocator = NavbarMainLocator+"//li[contains(@class, 'ac-gn-search') and @role='search']";
+    private static final String SearchButtonLocator = NavbarMainLocator+"//li[contains(@class, 'ac-gn-search') " +
+                                                                        "and @role='search']";
     private static final String SearchInputLocator = NavbarMainLocator+"//input[@id='ac-gn-searchform-input']";
     public void VerifyNavbarIsVisible(){
 
@@ -20,6 +21,7 @@ public class Navbar implements IUtils {
     }
 
     public void EnterSearchQueryInSearchBar(String SearchQuery){
-        inputMethods.enterTextAndHitEnter(Locators.XPath, SearchQuery, SearchInputLocator);
+        inputMethods.enterTextAndHitEnter(Locators.XPath,
+                                          SearchQuery, SearchInputLocator);
     }
 }

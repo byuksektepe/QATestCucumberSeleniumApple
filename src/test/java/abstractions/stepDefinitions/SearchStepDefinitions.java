@@ -28,6 +28,7 @@ public class SearchStepDefinitions extends AbstractHelper implements IStepDefini
 
     @And("Verify Search executed")
     public void verifySearchExecuted() {
+        searchResults.VerifyPageLoad();
     }
 
     @When("Click first result in results")
