@@ -9,6 +9,7 @@ public class Hook extends DriverManager{
 
     @Before
     public void StartTest(){
+
         setDriver();
     }
 

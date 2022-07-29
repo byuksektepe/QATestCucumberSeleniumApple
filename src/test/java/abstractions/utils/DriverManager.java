@@ -71,6 +71,6 @@ public class DriverManager {
         driver.quit();
     }
     public WebDriver getDriver() {
-            return driver;
+            return this.driver;
     }
 }

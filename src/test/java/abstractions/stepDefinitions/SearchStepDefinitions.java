@@ -1,7 +1,7 @@
 package abstractions.stepDefinitions;
 
 import abstractions.helpers.AbstractHelper;
-import StringNotContainsByGivenException;
+import abstractions.utils.Exceptions.StringNotContainsByGivenException;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.When;
