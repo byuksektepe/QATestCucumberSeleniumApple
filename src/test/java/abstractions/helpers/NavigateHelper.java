@@ -9,6 +9,5 @@ public class NavigateHelper extends AbstractHelper{
 
         getDriver().navigate().to(TargetUrl);
         getDriverWait().waitUntilJSReady();
-
     }
 }

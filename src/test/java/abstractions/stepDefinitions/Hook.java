@@ -1,11 +1,9 @@
 package abstractions.stepDefinitions;
 import abstractions.utils.DriverManager;
+import abstractions.utils.IUtils;
 import io.cucumber.java.*;
 
-import static abstractions.utils.IUtils.assertionMethods;
-
-
-public class Hook extends DriverManager{
+public class Hook extends DriverManager implements IUtils {
 
     @Before
     public void StartTest(){

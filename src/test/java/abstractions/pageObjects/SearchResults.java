@@ -22,13 +22,5 @@ public class SearchResults implements IUtils{
         clickMethods.click(Locators.XPath, FirstResultLocator);
     }
 
-    public void VerifyOpenedPageByGiven(String SearchQuery) throws StringNotContainsByGivenException {
-        String pageTitle = assertionMethods.getPageTitle().toLowerCase();
-        SearchQuery = SearchQuery.toLowerCase();
-        if(!pageTitle.contains(SearchQuery)){
-            throw new StringNotContainsByGivenException(SearchQuery, pageTitle);
-        }
-
-    }
 
 }

@@ -1,9 +1,14 @@
 package abstractions.utils;
 import abstractions.helpers.AbstractHelper;
+import abstractions.utils.Exceptions.StringNotContainsByGivenException;
+import org.asynchttpclient.util.Assertions;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+
+import static org.junit.Assert.*;
+import org.junit.Test;
 
 import static abstractions.utils.Constants.delayShort;
 
@@ -49,6 +54,14 @@ public class AssertionMethods extends AbstractHelper implements IUtils
         return getDriver().getTitle();
     }
 
+    public void VerifyOpenedPageByGiven(String SearchQuery) throws StringNotContainsByGivenException {
+        String pageTitle = this.getPageTitle().toLowerCase();
+        SearchQuery = SearchQuery.toLowerCase();
+        if(!pageTitle.contains(SearchQuery)) {
+            throw new StringNotContainsByGivenException(SearchQuery, pageTitle);
+        }
+    }
+
 
     public void isWait(int ms)
     {
@@ -56,7 +69,7 @@ public class AssertionMethods extends AbstractHelper implements IUtils
         {
             Thread.sleep(ms);
         }
-        catch(InterruptedException ex)
+        catch(InterruptedException e)
         {
             Thread.currentThread().interrupt();
         }
