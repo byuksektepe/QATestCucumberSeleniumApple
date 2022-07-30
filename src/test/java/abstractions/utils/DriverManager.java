@@ -61,8 +61,17 @@ public class DriverManager {
         }
     }
 
+    /**
+     * Gets Browser selection from VM Options setting.
+     * Arguments: Key: -Ddrivers.browser=<broswer>
+     * Arguments: def: <broswer>
+     * Possible Options: chrome, edge, firefox
+     * @return String
+     */
     private String getDriverProperty(){
-        return System.getProperty("drivers.browser","edge");
+        return System.getProperty(
+                "drivers.browser",
+                "edge");
     }
 
     public void setDriver(){
@@ -75,6 +84,6 @@ public class DriverManager {
         driver.quit();
     }
     public WebDriver getDriver() {
-            return this.driver;
+        return this.driver;
     }
 }
