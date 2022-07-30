@@ -63,7 +63,7 @@ public class DriverManager {
 
     /**
      * Gets Browser selection from VM Options setting.
-     * Arguments: Key: -Ddrivers.browser=<broswer>
+     * Arguments: key: -Ddrivers.browser=<broswer>
      * Arguments: def: <broswer>
      * Possible Options: chrome, edge, firefox
      * @return String
@@ -81,7 +81,9 @@ public class DriverManager {
     }
 
     public void destroyDriver(){
-        driver.quit();
+        if(driver != null){
+            driver.quit();
+        }
     }
     public WebDriver getDriver() {
         return this.driver;
