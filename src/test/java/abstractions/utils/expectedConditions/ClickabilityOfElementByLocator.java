@@ -22,7 +22,7 @@ public class ClickabilityOfElementByLocator extends AbstractHelper implements Ex
     @Override
     public WebElement apply(WebDriver webDriver) {
 
-        final Wait<WebDriver> wait = new WebDriverWait(getDriver(), Duration.ofSeconds(Constants.timeoutShort));
+        final Wait<WebDriver> wait = new WebDriverWait(getDriver(), Duration.ofSeconds(Constants.TIMEOUT_SHORT));
         try {
             return wait.until(ExpectedConditions.elementToBeClickable(locator));
         } catch (StaleElementReferenceException | NoSuchElementException e) {

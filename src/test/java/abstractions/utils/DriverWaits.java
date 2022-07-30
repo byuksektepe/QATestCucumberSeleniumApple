@@ -3,8 +3,6 @@ package abstractions.utils;
 import abstractions.utils.expectedConditions.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.ScriptTimeoutException;
-import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedCondition;
@@ -13,7 +11,6 @@ import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
-import java.util.NoSuchElementException;
 
 public class DriverWaits {
 
@@ -87,11 +84,11 @@ public class DriverWaits {
     }
 
     public Wait<WebDriver> waitLong() {
-        return new WebDriverWait(driverManager.getDriver(), Duration.ofSeconds(Constants.timeoutLong));
+        return new WebDriverWait(driverManager.getDriver(), Duration.ofSeconds(Constants.TIMEOUT_LONG));
     }
 
     public Wait<WebDriver> waitShort() {
-        return new WebDriverWait(driverManager.getDriver(), Duration.ofSeconds(Constants.timeoutShort));
+        return new WebDriverWait(driverManager.getDriver(), Duration.ofSeconds(Constants.TIMEOUT_SHORT));
     }
 
     public void waitUntilJSReady() {

@@ -1,13 +1,13 @@
 package abstractions.helpers;
 
 import org.openqa.selenium.WebDriver;
+import static abstractions.utils.Constants.MAIN_URL;
 
 public class NavigateHelper extends AbstractHelper{
-    private static final String TargetUrl = "https://www.apple.com/";
 
     public void navigateToTargetUrl(){
 
-        getDriver().navigate().to(TargetUrl);
+        getDriver().navigate().to(MAIN_URL);
         getDriverWait().waitUntilJSReady();
     }
 }

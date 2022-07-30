@@ -1,16 +1,11 @@
 package abstractions.utils;
 import abstractions.helpers.AbstractHelper;
 import abstractions.utils.Exceptions.StringNotContainsByGivenException;
-import org.asynchttpclient.util.Assertions;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
 
-import static org.junit.Assert.*;
-import org.junit.Test;
-
-import static abstractions.utils.Constants.delayShort;
+import static abstractions.utils.Constants.DELAY_SHORT;
 
 public class AssertionMethods extends AbstractHelper implements IUtils
 {
@@ -25,7 +20,7 @@ public class AssertionMethods extends AbstractHelper implements IUtils
      */
     public boolean isElementDisplayed(String locatorType, String locatorValue) {
         element = getDriverWait().waitLong().until(ExpectedConditions.presenceOfElementLocated(selectElementByType.getelementbytype(locatorType, locatorValue)));
-        isWait(delayShort);
+        isWait(DELAY_SHORT);
         return element.isDisplayed();
     }
     public WebElement FindElement(String locatorType, String locatorValue){
@@ -74,5 +69,4 @@ public class AssertionMethods extends AbstractHelper implements IUtils
             Thread.currentThread().interrupt();
         }
     }
-
 }
