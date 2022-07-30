@@ -20,7 +20,6 @@ import java.util.Properties;
 
 public class DriverManager {
     private static WebDriver driver;
-    private static final String SelectedBrowser = "chrome";
     private static final Boolean IsHeadless = false;
 
     /**
@@ -28,7 +27,7 @@ public class DriverManager {
      * @return webdriver
      */
     private WebDriver choseDriver() {
-        String preferredDriver = SelectedBrowser;
+        String preferredDriver = getDriverProperty();
         boolean headless = IsHeadless;
 
         switch (preferredDriver.toLowerCase()) {
@@ -62,11 +61,16 @@ public class DriverManager {
         }
     }
 
+    private String getDriverProperty(){
+        return System.getProperty("drivers.browser","edge");
+    }
+
     public void setDriver(){
 
         driver = choseDriver();
         driver.manage().window().maximize();
     }
+
     public void destroyDriver(){
         driver.quit();
     }
