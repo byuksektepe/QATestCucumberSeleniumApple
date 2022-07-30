@@ -2,7 +2,6 @@ package abstractions.pageObjects;
 
 import abstractions.utils.IUtils;
 import abstractions.utils.Locators;
-import abstractions.utils.Exceptions.StringNotContainsByGivenException;
 import org.openqa.selenium.WebElement;
 
 public class SearchResults implements IUtils{
@@ -14,7 +13,7 @@ public class SearchResults implements IUtils{
 
     public void VerifyPageLoad(){
         driverWaits.waitUntilJSReady();
-        WebElement VerifyElement = assertionMethods.FindElement(Locators.XPath,SearchResultsVerifyLocator);
+        WebElement VerifyElement = assertionMethods.findElement(Locators.XPath,SearchResultsVerifyLocator);
     }
 
     public void ClickFirstResultInResults(){

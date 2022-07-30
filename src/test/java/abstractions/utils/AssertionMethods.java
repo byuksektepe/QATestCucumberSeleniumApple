@@ -23,12 +23,12 @@ public class AssertionMethods extends AbstractHelper implements IUtils
         isWait(DELAY_SHORT);
         return element.isDisplayed();
     }
-    public WebElement FindElement(String locatorType, String locatorValue){
+    public WebElement findElement(String locatorType, String locatorValue){
 
         element = getDriverWait().waitShort().until(ExpectedConditions.presenceOfElementLocated(selectElementByType.getelementbytype(locatorType, locatorValue)));
         return element;
     }
-    public WebElement FindElementAndIgnoreErrors(String locatorType, String locatorValue){
+    public WebElement findElementAndIgnoreErrors(String locatorType, String locatorValue){
         try
         {
             return getDriverWait().waitShort().until(ExpectedConditions.presenceOfElementLocated(selectElementByType.getelementbytype(locatorType, locatorValue)));
@@ -49,7 +49,7 @@ public class AssertionMethods extends AbstractHelper implements IUtils
         return getDriver().getTitle();
     }
 
-    public void VerifyOpenedPageByGiven(String SearchQuery) throws StringNotContainsByGivenException {
+    public void verifyOpenedPageByGiven(String SearchQuery) throws StringNotContainsByGivenException {
         String pageTitle = this.getPageTitle().toLowerCase();
         SearchQuery = SearchQuery.toLowerCase();
         if(!pageTitle.contains(SearchQuery)) {

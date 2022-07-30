@@ -40,6 +40,6 @@ public class SearchStepDefinitions extends AbstractHelper implements IStepDefini
 
     @Then("Verify expected item page opened")
     public void verifyExpectedItemPageOpened() throws StringNotContainsByGivenException {
-        assertionMethods.VerifyOpenedPageByGiven(ReceivedSearchQuery);
+        assertionMethods.verifyOpenedPageByGiven(ReceivedSearchQuery);
     }
 }
