@@ -4,7 +4,7 @@ import abstractions.helpers.NavigateHelper;
 import abstractions.pageObjects.*;
 import abstractions.utils.AssertionMethods;
 
-public interface IStepDefinitions {
+public interface StepDefinitionsInterface {
     Navbar navbar = new Navbar();
     Footer footer = new Footer();
     SearchResults searchResults = new SearchResults();

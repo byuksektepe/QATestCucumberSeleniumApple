@@ -1,10 +1,10 @@
 package abstractions.pageObjects;
 
-import abstractions.utils.IUtils;
+import abstractions.utils.UtilsInterface;
 import abstractions.utils.Locators;
 import org.openqa.selenium.WebElement;
 
-public class SearchResults implements IUtils{
+public class SearchResults implements UtilsInterface {
 
     private static final String SearchResultsVerifyLocator = "//div[@class='rf-serp-explore-details']" +
                                                              "/div[@class='rf-serp-resultcount']";

@@ -7,7 +7,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import static abstractions.utils.Constants.DELAY_SHORT;
 
-public class AssertionMethods extends AbstractHelper implements IUtils
+public class AssertionMethods extends AbstractHelper implements UtilsInterface
 {
     private WebElement element = null;
 

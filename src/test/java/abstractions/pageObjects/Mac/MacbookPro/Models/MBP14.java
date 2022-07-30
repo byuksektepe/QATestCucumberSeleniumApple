@@ -1,13 +1,9 @@
 package abstractions.pageObjects.Mac.MacbookPro.Models;
 
-import abstractions.pageObjects.Mac.MacbookPro.Main;
-import abstractions.utils.IUtils;
-import org.openqa.selenium.NoSuchElementException;
-import abstractions.utils.Locators;
+import abstractions.pageObjects.Mac.MacbookPro.MBP;
+import abstractions.utils.UtilsInterface;
 
-public class MBP14 extends Main implements IUtils{
+public class MBP14 extends MBP implements UtilsInterface {
 
-    public void clickBuyButton(){
 
-    }
 }

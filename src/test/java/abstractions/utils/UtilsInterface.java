@@ -1,6 +1,6 @@
 package abstractions.utils;
 
-public interface IUtils {
+public interface UtilsInterface {
     ClickElementMethods clickMethods = new ClickElementMethods();
     InputMethods inputMethods = new InputMethods();
     AssertionMethods assertionMethods = new AssertionMethods();

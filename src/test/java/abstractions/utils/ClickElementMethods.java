@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class ClickElementMethods extends AbstractHelper implements IUtils {
+public class ClickElementMethods extends AbstractHelper implements UtilsInterface {
     private WebElement element = null;
 
     public void click(String locatorType, String locatorValue) {

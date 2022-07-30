@@ -6,7 +6,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.Keys;
 
 
-public class InputMethods extends AbstractHelper implements IUtils{
+public class InputMethods extends AbstractHelper implements UtilsInterface {
 
     /**
      * Method to enter text into text field

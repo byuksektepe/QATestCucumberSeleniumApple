@@ -11,7 +11,7 @@ import io.cucumber.junit.Cucumber;
 import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
-public class SearchStepDefinitions extends AbstractHelper implements IStepDefinitions{
+public class SearchStepDefinitions extends AbstractHelper implements StepDefinitionsInterface {
 
     private String ReceivedSearchQuery;
 

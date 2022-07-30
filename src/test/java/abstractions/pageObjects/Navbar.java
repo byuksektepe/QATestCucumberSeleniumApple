@@ -1,10 +1,10 @@
 package abstractions.pageObjects;
 
-import abstractions.utils.IUtils;
+import abstractions.utils.UtilsInterface;
 import org.openqa.selenium.NoSuchElementException;
 import abstractions.utils.Locators;
 
-public class Navbar implements IUtils {
+public class Navbar implements UtilsInterface {
 
     private static final String NavbarMainLocator = "//nav[@id='ac-globalnav']";
     private static final String SearchButtonLocator = NavbarMainLocator+"//li[contains(@class, 'ac-gn-search') " +

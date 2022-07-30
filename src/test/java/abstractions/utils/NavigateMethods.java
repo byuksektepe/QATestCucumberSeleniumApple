@@ -1,14 +1,11 @@
 package abstractions.utils;
 
 import abstractions.helpers.AbstractHelper;
-import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class NavigateMethods extends AbstractHelper implements IUtils{
+public class NavigateMethods extends AbstractHelper implements UtilsInterface {
     private WebElement element = null;
 
     public void navigateToUrl(String url) {
