@@ -57,7 +57,6 @@ public class AssertionMethods extends AbstractHelper implements IUtils
         }
     }
 
-
     public void isWait(int ms)
     {
         try
