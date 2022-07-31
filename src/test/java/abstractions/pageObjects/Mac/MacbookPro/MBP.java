@@ -10,6 +10,12 @@ public class MBP implements UtilsInterface {
     private static final String selectorMBP13Locator = selectorMainLocator + "//div[@class='mbp13 links']/a";
     private static final String selectorMBP14Locator = selectorMainLocator + "//div[@class='mbp14 links']/a";
     private static final String selectorMBP16Locator = selectorMainLocator + "//div[@class='mbp16 links']/a";
+
+    /** Model Names **/
+    public static final String O13 = "13 inch";
+    public static final String O14 = "14 inch";
+    public static final String O16 = "16 inch";
+
     public void selectMacbookPro13(){
         navigateMethods.scrollToElement(Locators.XPath, selectorMBP13Locator);
         clickMethods.click(Locators.XPath, selectorMBP13Locator);
