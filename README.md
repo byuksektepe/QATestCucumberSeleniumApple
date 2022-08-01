@@ -43,7 +43,7 @@ https://github.com/<your_username>/QATestCucumberSeleniumApple.git
 ```
 ### Execute Tests Using Maven
 
-Command Prompt/Power Shell (Windows OS) or Open terminal (for MAC OSX) or and navigate to the project directory type ```mvn clean test``` command to run features. With this command it will invoke the default Edge Chrome and will execute the tests.
+Command Prompt/Power Shell (Windows OS) or Open terminal (for MAC OSX) or and navigate to the project directory type ```mvn clean test``` command to run features. With this command it will invoke the default Chrome and will execute the tests.
 
 - To run features on specific browser use, ```mvn test "-Dbrowser=<browser_name>"``` browser_name can be one of following but make sure that browser’s driver file are present and specified in system variable. Like "chrome", "firefox", "edge" and "safari".
 
