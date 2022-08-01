@@ -51,6 +51,7 @@ public class DriverManager {
 
                 return new ChromeDriver(chromeOptions);
             case "firefox":
+                System.setProperty("webdriver.gecko.driver", "src/test/resources/drivers/geckodriver");
                 final FirefoxOptions ffOptions = new FirefoxOptions();
 
                 if (headless) {
