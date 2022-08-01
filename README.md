@@ -40,7 +40,7 @@ If you don't want to be Authentication, you can fork the project.
 ```
 https://github.com/Berkantyuks/QATestCucumberSeleniumApple.git
 ```
-[No Need Authentication]
+[No Need Authentication] but you need generate own token key.
 ```
 https://github.com/<your_username>/QATestCucumberSeleniumApple.git
 ```
