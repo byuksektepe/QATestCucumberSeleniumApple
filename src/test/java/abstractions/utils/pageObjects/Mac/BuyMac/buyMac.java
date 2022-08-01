@@ -1,12 +1,9 @@
-package abstractions.pageObjects.Mac.BuyMac;
+package abstractions.utils.pageObjects.Mac.BuyMac;
 
-import abstractions.pageObjects.Mac.MacInterface;
+import abstractions.utils.pageObjects.Mac.MacInterface;
 import abstractions.utils.Exceptions.ModelNotMatchByGivenException;
 import abstractions.utils.UtilsInterface;
-
-import static abstractions.pageObjects.Mac.MacbookPro.MBP.O13;
-import static abstractions.pageObjects.Mac.MacbookPro.MBP.O14;
-import static abstractions.pageObjects.Mac.MacbookPro.MBP.O16;
+import abstractions.utils.pageObjects.Mac.MacbookPro.MBP;
 
 public class buyMac implements UtilsInterface, MacInterface {
 
@@ -15,11 +12,11 @@ public class buyMac implements UtilsInterface, MacInterface {
 
         switch(Mac)
         {
-            case O13:
+            case MBP.O13:
                 mbp.selectMacbookPro13();
-            case O14:
+            case MBP.O14:
                 mbp.selectMacbookPro14();
-            case O16:
+            case MBP.O16:
                 mbp.selectMacbookPro16();
             default:
                 throw new ModelNotMatchByGivenException(Mac);

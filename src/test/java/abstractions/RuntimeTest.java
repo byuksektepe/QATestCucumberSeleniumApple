@@ -7,10 +7,8 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         plugin = {"pretty"},
-        glue = {"src/test/abstractions/stepDefinitions"},
-        features = {"classpath:features/Search.feature"},
-        dryRun = true,
-        monochrome = true
+        features = {"classpath:features/"},
+        glue = {"abstractions.stepDefinitions"}
 )
 
-public class TestRuntime { }
+public class RuntimeTest { }

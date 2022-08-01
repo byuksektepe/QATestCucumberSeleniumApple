@@ -70,8 +70,8 @@ public class DriverManager {
      */
     private String getDriverProperty(){
         return System.getProperty(
-                "drivers.browser",
-                "edge");
+                "browser",
+                "chrome");
     }
 
     public void setDriver(){

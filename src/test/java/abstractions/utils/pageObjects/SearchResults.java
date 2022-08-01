@@ -1,4 +1,4 @@
-package abstractions.pageObjects;
+package abstractions.utils.pageObjects;
 
 import abstractions.utils.UtilsInterface;
 import abstractions.utils.Locators;

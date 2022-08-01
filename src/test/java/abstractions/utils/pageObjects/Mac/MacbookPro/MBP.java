@@ -1,4 +1,4 @@
-package abstractions.pageObjects.Mac.MacbookPro;
+package abstractions.utils.pageObjects.Mac.MacbookPro;
 
 import abstractions.utils.UtilsInterface;
 import abstractions.utils.Locators;
