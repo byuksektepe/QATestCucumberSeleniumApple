@@ -3,7 +3,6 @@ import abstractions.utils.DriverManager;
 import abstractions.utils.UtilsInterface;
 import io.cucumber.java.*;
 import io.cucumber.junit.Cucumber;
-import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
