@@ -36,6 +36,7 @@ public class DriverManager {
             case "edge":
                 return new EdgeDriver();
             case "chrome":
+                System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver");
                 final ChromeOptions chromeOptions = new ChromeOptions();
 
                 if (headless) {
