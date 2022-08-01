@@ -18,7 +18,4 @@ public class AbstractHelper implements HelperInterface{
         return dW;
     }
 
-    public void wait(String time) throws InterruptedException {
-        Thread.sleep(Integer.parseInt(time));
-    }
 }

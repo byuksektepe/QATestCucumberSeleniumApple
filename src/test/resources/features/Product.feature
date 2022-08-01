@@ -1,18 +1,19 @@
 Feature: Product
-  You need to provide model linked with SearchQuery.
-  Like: <Macbook Pro> <14 inch>
-  Or: <Macbook Air> <m2 chip>
+  You need to provide model linked with Family.
+  Like: <Mac> <Macbook Pro> <14 inch> [<Base>?<Better>]
+  Or: <Iphone> <Iphone 13> <Pro> [<Better>?<Ultimate>]
 
-  Scenario Outline: Visitor should be able to add the product to the bag
+  Scenario Outline: Visitor should be able to add the product to the bag using navbar
     Given Navigate to Apple's site
-    And search for product or item "<SearchQuery>" in search bar
-    And Verify Search executed
-    When Click first result in results
-    And Verify expected item page opened
-    And Select given: "<Model>" product
+    And Click navbar item "<Family>"
+    And Verify family page opened
+    When Click product: "<Product>" button
+    And Verify product page opened
+    And Buy given: "<Model>" product model
+    And Select given: "<Configuration>" product configuration
     And Add product to bag
     Then Verify product added to bag
 
   Examples:
-    | SearchQuery | Model   |
-    | Macbook Pro | 14 inch |
+    | Family | Product | Model       | Configuration |
+    | Mac    | Macbook | Pro 14 inch | Base          |

@@ -7,8 +7,9 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 public class ProductStepDefinitions {
-    @And("Select given: {string} product")
-    public void selectGivenProduct(String Model) {
+
+    @And("Buy given: {string} product model")
+    public void buyGivenProductModel(String Model) {
     }
 
     @And("Add product to bag")
