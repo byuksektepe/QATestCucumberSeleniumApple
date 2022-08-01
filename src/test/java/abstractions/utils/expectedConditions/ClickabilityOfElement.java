@@ -10,7 +10,6 @@ import org.openqa.selenium.support.ui.*;
 
 import java.time.Duration;
 
-
 public class ClickabilityOfElement extends AbstractHelper implements ExpectedCondition<WebElement> {
 
     private final WebElement element;
