@@ -6,11 +6,11 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-
-        glue = {"abstractions/stepDefinitions"
-        },
-        features = {"classpath:features"}
+        plugin = {"pretty"},
+        glue = {"src/test/abstractions/stepDefinitions"},
+        features = {"classpath:features/Search.feature"},
+        dryRun = true,
+        monochrome = true
 )
 
-public class TestRuntime {
-}
+public class TestRuntime { }
