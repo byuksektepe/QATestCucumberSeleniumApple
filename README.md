@@ -33,11 +33,14 @@ The entire project is designed to be run and built with Maven. If you want to ru
 - JUnit Extension
 - Maven Builder
 
-### Clone for TeamCity CI/CD [Requires Authentication]
+### Clone for TeamCity CI/CD
 If you don't want to be Authentication, you can fork the project.
+
+[Requires Authentication]
 ```
 https://github.com/Berkantyuks/QATestCucumberSeleniumApple.git
 ```
+[No Need Authentication]
 ```
 https://github.com/<your_username>/QATestCucumberSeleniumApple.git
 ```
