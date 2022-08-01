@@ -1,6 +1,7 @@
-﻿## QA Apple Automated Tests With Cucumber JVM
+﻿## QA Apple Automated Tests With Cucumber JVM and Maven Build
  ![Java](https://img.shields.io/badge/java-000000.svg?style=for-the-badge&logo=java&logoColor=white)
  ![JUnit](https://img.shields.io/badge/Junit5-000000?style=for-the-badge&logo=junit5&logoColor=white)
+ ![Maven](https://img.shields.io/badge/Maven-000000?style=for-the-badge&logo=apachemaven&logoColor=white)
  ![Selenium](https://img.shields.io/badge/Selenium-000000?style=for-the-badge&logo=Selenium&logoColor=white)
  ![TeamCity](https://img.shields.io/badge/TeamCity-000000?style=for-the-badge&logo=TeamCity&logoColor=white)
  ![TEST-003-A](https://img.shields.io/badge/TEST%20003%20A-000000?style=for-the-badge&logo=null&logoColor=white)
@@ -18,4 +19,15 @@
 
 <p>All Helpers located in <a href="https://github.com/Berkantyuks/QATestCucumberSeleniumApple/tree/main/src/test/java/abstractions/helpers">/abstractions/helpers</a></p>
 
+### Test Environment Requirements
+- TeamCity Pro 2022
+- Java JDK 18
+- IntelliJ IDE
+
+### Test Runtime Requirements
+- Cucumber Extension
+- Cucumber+ Extension
+- Gherkin Extension
+- JUnit Extension
+- Maven Builder
 
