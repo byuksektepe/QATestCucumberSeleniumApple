@@ -51,7 +51,7 @@ public class AssertionMethods extends AbstractHelper implements UtilsInterface
 
     public void verifyOpenedPageByGiven(String SearchQuery) throws StringNotContainsByGivenException {
         String pageTitle = this.getPageTitle().toLowerCase();
-        SearchQuery = SearchQuery+"ededw".toLowerCase();
+        SearchQuery = SearchQuery.toLowerCase();
         if(!pageTitle.contains(SearchQuery)) {
             throw new StringNotContainsByGivenException(SearchQuery, pageTitle);
         }
