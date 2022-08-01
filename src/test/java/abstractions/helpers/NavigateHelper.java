@@ -1,13 +1,14 @@
 package abstractions.helpers;
 
-import org.openqa.selenium.WebDriver;
 import static abstractions.utils.Constants.MAIN_URL;
+
 
 public class NavigateHelper implements HelperInterface{
 
-    public void navigateToTargetUrl(){
+    public void navigateToMainUrl(){
 
         dM.getDriver().navigate().to(MAIN_URL);
         dW.waitUntilJSReady();
     }
+
 }

@@ -1,8 +1,9 @@
 Feature: Product
   You need to provide model linked with Family.
-  Like: <Mac> <Macbook Pro> <14 inch> [<Base>?<Better>]
-  Or: <Iphone> <Iphone 13> <Pro> [<Better>?<Ultimate>]
+  Like: <Mac>    <Macbook Pro> <14 inch> [<Base>?<Better>]
+  Or:   <Iphone> <Iphone 13>   <Pro>     [<Better>?<Ultimate>]
 
+  @Smoke @Product
   Scenario Outline: Visitor should be able to add the product to the bag using navbar
     Given Navigate to Apple's site
     And Click navbar item "<Family>"

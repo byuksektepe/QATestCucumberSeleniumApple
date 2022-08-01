@@ -16,7 +16,7 @@ public class SearchStepDefinitions extends AbstractHelper implements StepDefinit
 
     @Given("^Navigate to Apple's site$")
     public void navigeToApplesSite(){
-        navigateHelper.navigateToTargetUrl();
+        navigateHelper.navigateToMainUrl();
     }
 
     @And("search for product or item {string} in search bar")
