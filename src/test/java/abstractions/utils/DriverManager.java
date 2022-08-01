@@ -36,7 +36,7 @@ public class DriverManager {
             case "edge":
                 return new EdgeDriver();
             case "chrome":
-                System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver");
+                System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver.exe");
                 final ChromeOptions chromeOptions = new ChromeOptions();
 
                 if (headless) {
@@ -51,7 +51,7 @@ public class DriverManager {
 
                 return new ChromeDriver(chromeOptions);
             case "firefox":
-                System.setProperty("webdriver.gecko.driver", "src/test/resources/drivers/geckodriver");
+                System.setProperty("webdriver.gecko.driver", "src/test/resources/drivers/geckodriver.exe");
                 final FirefoxOptions ffOptions = new FirefoxOptions();
 
                 if (headless) {
