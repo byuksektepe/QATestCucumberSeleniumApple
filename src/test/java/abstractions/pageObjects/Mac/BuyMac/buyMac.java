@@ -1,9 +1,9 @@
-package abstractions.utils.pageObjects.Mac.BuyMac;
+package abstractions.pageObjects.Mac.BuyMac;
 
-import abstractions.utils.pageObjects.Mac.MacInterface;
+import abstractions.pageObjects.Mac.MacbookPro.MBP;
+import abstractions.pageObjects.Mac.MacInterface;
 import abstractions.utils.Exceptions.ModelNotMatchByGivenException;
 import abstractions.utils.UtilsInterface;
-import abstractions.utils.pageObjects.Mac.MacbookPro.MBP;
 
 public class buyMac implements UtilsInterface, MacInterface {
 
