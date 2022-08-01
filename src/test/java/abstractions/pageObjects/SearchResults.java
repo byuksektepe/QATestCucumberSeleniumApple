@@ -12,7 +12,7 @@ public class SearchResults implements UtilsInterface {
                                                      "//h2[@class='rf-serp-productname']/a";
 
     public void VerifyPageLoad(){
-        driverWaits.waitUntilJSReady();
+        dW.waitUntilJSReady();
         WebElement VerifyElement = assertionMethods.findElement(Locators.XPath,SearchResultsVerifyLocator);
     }
 

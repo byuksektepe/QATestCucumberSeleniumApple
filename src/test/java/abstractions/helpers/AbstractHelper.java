@@ -1,24 +1,21 @@
 package abstractions.helpers;
 
-import abstractions.utils.DriverManager;
 import abstractions.utils.DriverWaits;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
-public class AbstractHelper{
+public class AbstractHelper implements HelperInterface{
 
-    private final DriverManager driverManager = new DriverManager();
-    private final DriverWaits driverWait = new DriverWaits(driverManager);
     protected AbstractHelper(){
-        PageFactory.initElements(driverManager.getDriver(), this);
+        PageFactory.initElements(dM.getDriver(), this);
     }
 
     public WebDriver getDriver() {
-        return driverManager.getDriver();
+        return dM.getDriver();
     }
 
     public DriverWaits getDriverWait() {
-        return driverWait;
+        return dW;
     }
 
     public void wait(String time) throws InterruptedException {

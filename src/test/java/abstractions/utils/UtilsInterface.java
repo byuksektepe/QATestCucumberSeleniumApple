@@ -5,7 +5,7 @@ public interface UtilsInterface {
     InputMethods inputMethods = new InputMethods();
     AssertionMethods assertionMethods = new AssertionMethods();
     NavigateMethods navigateMethods = new NavigateMethods();
-    DriverManager driverManager = new DriverManager();
-    DriverWaits driverWaits = new DriverWaits(driverManager);
+    DriverManager dM = new DriverManager();
+    DriverWaits dW = new DriverWaits(dM);
     SelectElementByType selectElementByType = new SelectElementByType();
 }
