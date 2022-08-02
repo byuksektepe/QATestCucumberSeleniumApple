@@ -1,5 +1,6 @@
 package abstractions.stepDefinitions;
 
+import abstractions.utils.Exceptions.NavbarItemNotMatchByGivenException;
 import abstractions.utils.Exceptions.StringNotContainsByGivenException;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
@@ -26,7 +27,12 @@ public class ProductStepDefinitions implements StepDefinitionsInterface{
     }
 
     @And("Click navbar item {string}")
-    public void clickNavbarItem(String ProductFamily) throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+    public void clickNavbarItem(String ProductFamily)
+            throws NoSuchMethodException,
+            InvocationTargetException,
+            IllegalAccessException,
+            NavbarItemNotMatchByGivenException {
+
         this.ProductFamily = ProductFamily;
         navbar.navigateNavbarByGiven(ProductFamily);
     }
