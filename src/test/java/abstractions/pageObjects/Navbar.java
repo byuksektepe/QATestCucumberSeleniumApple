@@ -1,8 +1,13 @@
 package abstractions.pageObjects;
 
 import abstractions.utils.UtilsInterface;
+import java.lang.reflect.*;
 import org.openqa.selenium.NoSuchElementException;
 import abstractions.utils.Locators;
+
+import java.util.Objects;
+
+import static abstractions.utils.Constants.APPLE_NAVBAR_ITEMS;
 
 public class Navbar implements UtilsInterface {
 
@@ -32,30 +37,27 @@ public class Navbar implements UtilsInterface {
     public void ClickSearchButton(){
         clickMethods.click(Locators.XPath, SearchButtonLocator);
     }
-    public void clickLogo(){
+
+    public void navigateNavbarByGiven(String ButtonName) throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+        ButtonName = ButtonName.toLowerCase();
+
+        for (String navbar_item : APPLE_NAVBAR_ITEMS) {
+            if(Objects.equals(navbar_item, ButtonName)){
+                Method method = Navbar.class.getDeclaredMethod("_"+navbar_item);
+                method.invoke(null);
+            }
+        }
+    }
+
+    public static void _logo(){
         clickMethods.click(Locators.XPath, LogoLocator);
     }
 
-    public void clickStore(){
+    public static void _store(){
         clickMethods.click(Locators.XPath, StoreLocator);
     }
 
-    public void clickMac(){
-        clickMethods.click(Locators.XPath, MacLocator);
-    }
-
-    public void navigateNavbarByGiven(String ButtonName){
-        ButtonName = ButtonName.toLowerCase();
-        switch (ButtonName){
-            case "logo":
-                clickLogo();
-            case "store":
-                clickStore();
-            case "mac":
-                clickMac();
-        }
-
-    }
+    public static void _mac(){ clickMethods.click(Locators.XPath, MacLocator); }
 
     public void EnterSearchQueryInSearchBar(String SearchQuery){
         inputMethods.enterTextAndHitEnter(Locators.XPath,

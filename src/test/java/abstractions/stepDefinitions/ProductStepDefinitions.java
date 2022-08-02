@@ -7,6 +7,8 @@ import io.cucumber.java.en.When;
 import io.cucumber.junit.Cucumber;
 import org.junit.runner.RunWith;
 
+import java.lang.reflect.InvocationTargetException;
+
 @RunWith(Cucumber.class)
 public class ProductStepDefinitions implements StepDefinitionsInterface{
 
@@ -24,7 +26,7 @@ public class ProductStepDefinitions implements StepDefinitionsInterface{
     }
 
     @And("Click navbar item {string}")
-    public void clickNavbarItem(String ProductFamily) {
+    public void clickNavbarItem(String ProductFamily) throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
         this.ProductFamily = ProductFamily;
         navbar.navigateNavbarByGiven(ProductFamily);
     }
