@@ -54,3 +54,7 @@ Note that the web drivers in this project are adjusted according to my agent bro
 
 - To run specific feature if you want only search.feature, Run ```mvn test -Dcucumber.options="classpath:features/Search.feature"```
 
+### Execute Tests Using TeamCity
+![image](https://user-images.githubusercontent.com/61010367/182302114-fb97fe04-a0ad-4d02-b2e6-ccf534397a8d.png)
+
+
