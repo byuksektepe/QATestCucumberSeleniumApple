@@ -3,6 +3,10 @@ package abstractions.pageObjects.Mac;
 import abstractions.utils.Locators;
 import abstractions.utils.UtilsInterface;
 
+import java.util.Objects;
+
+import static abstractions.utils.Constants.MAC_PRODUCT_FAMILY;
+
 public class Mac implements UtilsInterface, MacInterface {
     private static final String ChapterNavLocator = "//nav[@id='chapternav']";
 
@@ -11,10 +15,12 @@ public class Mac implements UtilsInterface, MacInterface {
     private static final String navMacbookProLocator = ChapterNavLocator +
             "//li[contains(@class,'chapternav-item-macbook-pro')]";
 
-    public void clickNavMBA() { clickMethods.click(Locators.XPath, navMacbookAirLocator); }
+    public void selectMacFamilyByGiven(String MacFamily){
+        MacFamily = MacFamily.toLowerCase();
+        for (String mac_family : MAC_PRODUCT_FAMILY ) {
+            if(Objects.equals(mac_family, MacFamily)){
 
-    public void clickNavMBP(){
-        clickMethods.click(Locators.XPath, navMacbookProLocator);
+            }
+        }
     }
-
 }
