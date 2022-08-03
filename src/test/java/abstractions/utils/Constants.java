@@ -11,6 +11,9 @@ public class Constants {
 
     public static final String[] APPLE_PRODUCT_FAMILY = {"mac", "ipad", "iphone",
             "watch", "airpods", "tvhome", "accessories"};
+
+    public static final String[] MAC_PRODUCT_FAMILY = {"macbook air", "macbook pro",
+            "imac 24\"", "mac mini", "mac studio", "mac pro"};
     public static final long TIMEOUT_LONG = 30;
     public static final int DELAY_LONG = 600;
     public static final long TIMEOUT_SHORT = 10;

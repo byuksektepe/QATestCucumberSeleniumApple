@@ -14,7 +14,7 @@ public class Navbar implements UtilsInterface {
 
     /** Main Navbar Locator **/
     private static final String NavbarMainLocator = "//nav[@id='ac-globalnav']";
-    /** Navbar Buttons Locators **/
+    /** Navbar Button Locators **/
     private static final String LogoLocator = NavbarMainLocator+"//li[contains(@class, 'ac-gn-apple')]";
     private static final String StoreLocator = NavbarMainLocator+"//li[contains(@class, 'ac-gn-store')]";
     private static final String MacLocator = NavbarMainLocator+"//li[contains(@class, 'ac-gn-mac')]";
@@ -39,28 +39,28 @@ public class Navbar implements UtilsInterface {
         clickMethods.click(Locators.XPath, SearchButtonLocator);
     }
 
-    public void navigateNavbarByGiven(String ButtonName)
+    public void navigateNavbarByGiven(String navbarItem)
             throws NoSuchMethodException,
             InvocationTargetException,
             IllegalAccessException,
             NavbarItemNotMatchByGivenException {
 
-        ButtonName = ButtonName.toLowerCase();
+        navbarItem = navbarItem.toLowerCase();
         boolean isEx = true;
 
         for (String navbar_item : APPLE_NAVBAR_ITEMS) {
-            if(Objects.equals(navbar_item, ButtonName)){
-                Method method = Navbar.class.getDeclaredMethod("_"+navbar_item);
+            if(Objects.equals(navbar_item, navbarItem)){
+                Method method = Navbar.class.getDeclaredMethod("_" + navbar_item);
                 method.invoke(null);
                 isEx = false;
                 break;
             }
         }
 
-        if(isEx)  { throw new NavbarItemNotMatchByGivenException(ButtonName); }
+        if(isEx)  { throw new NavbarItemNotMatchByGivenException(navbarItem); }
     }
 
-    public static void _logo(){ clickMethods.click(Locators.XPath, LogoLocator); }
+    public static void _logo() { clickMethods.click(Locators.XPath, LogoLocator); }
     public static void _store() { clickMethods.click(Locators.XPath, StoreLocator); }
     public static void _mac() { clickMethods.click(Locators.XPath, MacLocator); }
 

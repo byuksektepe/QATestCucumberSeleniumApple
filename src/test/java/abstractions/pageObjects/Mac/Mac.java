@@ -11,9 +11,7 @@ public class Mac implements UtilsInterface, MacInterface {
     private static final String navMacbookProLocator = ChapterNavLocator +
             "//li[contains(@class,'chapternav-item-macbook-pro')]";
 
-    public void clickNavMBA(){
-        clickMethods.click(Locators.XPath, navMacbookAirLocator);
-    }
+    public void clickNavMBA() { clickMethods.click(Locators.XPath, navMacbookAirLocator); }
 
     public void clickNavMBP(){
         clickMethods.click(Locators.XPath, navMacbookProLocator);
