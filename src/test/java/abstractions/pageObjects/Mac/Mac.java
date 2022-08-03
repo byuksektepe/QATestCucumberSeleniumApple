@@ -17,8 +17,9 @@ public class Mac implements UtilsInterface, MacInterface {
         for (String mac_family : MAC_PRODUCT_FAMILY ) {
             if(Objects.equals(mac_family, MacFamily)){
                 isEx = false;
+                String FormattedMacFamily = MacFamily.replace(" ", "-");
                 String ChapterNavLocatorWithProduct = ChapterNavLocator +
-                        "//li[contains(@class,'chapternav-item-" + mac_family + "')]";
+                        "//li[contains(@class,'chapternav-item-" + FormattedMacFamily + "')]";
                 clickMethods.click(Locators.XPath, ChapterNavLocatorWithProduct);
             }
         }

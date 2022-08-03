@@ -1,5 +1,6 @@
 package abstractions.stepDefinitions;
 
+import abstractions.utils.Exceptions.MacFamilyNotMatchByGivenException;
 import abstractions.utils.Exceptions.NavbarItemNotMatchByGivenException;
 import abstractions.utils.Exceptions.StringNotContainsByGivenException;
 import io.cucumber.java.en.And;
@@ -43,7 +44,8 @@ public class ProductStepDefinitions implements StepDefinitionsInterface{
     }
 
     @When("Click product: {string} button")
-    public void clickProductButton(String arg0) {
+    public void clickProductButton(String ModelFamily) throws MacFamilyNotMatchByGivenException {
+        productHelper.redirectToProductByGiven(ProductFamily, ModelFamily);
     }
 
     @And("Verify product page opened")
