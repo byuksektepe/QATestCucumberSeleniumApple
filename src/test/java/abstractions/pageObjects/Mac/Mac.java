@@ -1,5 +1,6 @@
 package abstractions.pageObjects.Mac;
 
+import abstractions.utils.Exceptions.MacFamilyNotMatchByGivenException;
 import abstractions.utils.Locators;
 import abstractions.utils.UtilsInterface;
 
@@ -10,17 +11,18 @@ import static abstractions.utils.Constants.MAC_PRODUCT_FAMILY;
 public class Mac implements UtilsInterface, MacInterface {
     private static final String ChapterNavLocator = "//nav[@id='chapternav']";
 
-    private static final String navMacbookAirLocator = ChapterNavLocator +
-            "//li[contains(@class,'chapternav-item-macbook-air')]";
-    private static final String navMacbookProLocator = ChapterNavLocator +
-            "//li[contains(@class,'chapternav-item-macbook-pro')]";
-
-    public void selectMacFamilyByGiven(String MacFamily){
+    public void selectMacFamilyByGiven(String MacFamily) throws MacFamilyNotMatchByGivenException {
         MacFamily = MacFamily.toLowerCase();
+        boolean isEx = true;
         for (String mac_family : MAC_PRODUCT_FAMILY ) {
             if(Objects.equals(mac_family, MacFamily)){
-
+                isEx = false;
+                String ChapterNavLocatorWithProduct = ChapterNavLocator +
+                        "//li[contains(@class,'chapternav-item-" + mac_family + "')]";
+                clickMethods.click(Locators.XPath, ChapterNavLocatorWithProduct);
             }
+        }
+        if (isEx) { throw new MacFamilyNotMatchByGivenException(MacFamily);
         }
     }
 }
