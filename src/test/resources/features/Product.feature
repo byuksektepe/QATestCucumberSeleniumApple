@@ -16,5 +16,5 @@ Feature: Product
     Then Verify product added to bag
 
   Examples:
-    | Family | Product     | Model | Configuration |
-    | Mac    | Macbook Pro | 14"   | Base          |
+    | Family | Product    | Model | Configuration |
+    | Mac    | Mac Studio | 14"   | Base          |

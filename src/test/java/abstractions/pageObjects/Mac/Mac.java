@@ -21,6 +21,7 @@ public class Mac implements UtilsInterface, MacInterface {
                 String ChapterNavLocatorWithProduct = ChapterNavLocator +
                         "//li[contains(@class,'chapternav-item-" + FormattedMacFamily + "')]";
                 clickMethods.click(Locators.XPath, ChapterNavLocatorWithProduct);
+                break;
             }
         }
         if (isEx) { throw new MacFamilyNotMatchByGivenException(MacFamily);
