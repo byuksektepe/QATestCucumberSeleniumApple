@@ -1,6 +1,7 @@
 package abstractions.stepDefinitions;
 
 import abstractions.utils.Exceptions.MacFamilyNotMatchByGivenException;
+import abstractions.utils.Exceptions.ModelNotMatchByGivenException;
 import abstractions.utils.Exceptions.NavbarItemNotMatchByGivenException;
 import abstractions.utils.Exceptions.StringNotContainsByGivenException;
 import io.cucumber.java.en.And;
@@ -17,7 +18,10 @@ public class ProductStepDefinitions implements StepDefinitionsInterface{
     private String ProductFamily;
     private String ModelFamily;
     @And("Buy given: {string} product model")
-    public void buyGivenProductModel(String Model) {
+    public void buyGivenProductModel(String Model)
+            throws MacFamilyNotMatchByGivenException, ModelNotMatchByGivenException {
+
+        productHelper.buyProductByGiven(ProductFamily, Model);
     }
 
     @And("Add product to bag")

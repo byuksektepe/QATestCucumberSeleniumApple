@@ -1,7 +1,7 @@
 Feature: Product
   You need to provide model linked with Family.
-  Like: <Mac>    <Macbook Pro> <14"> [<Base>?<Better>]
-  Or:   <Iphone> <Iphone 13>   <Pro>     [<Better>?<Ultimate>]
+  Like: <Mac>    <Macbook Pro> <14">  [<Base>?<Better>]
+  Or:   <Iphone> <Iphone 13>   <Pro>  [<Better>?<Ultimate>]
 
   @Smoke @Product
   Scenario Outline: Visitor should be able to add the product to the bag using navbar
@@ -16,5 +16,5 @@ Feature: Product
     Then Verify product added to bag
 
   Examples:
-    | Family | Product    | Model | Configuration |
-    | Mac    | Mac Studio | 14"   | Base          |
+    | Family | Product     | Model | Configuration |
+    | Mac    | Macbook Pro | 14"   | Base          |

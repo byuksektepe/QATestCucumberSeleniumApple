@@ -7,19 +7,19 @@ import abstractions.utils.UtilsInterface;
 
 public class buyMac implements UtilsInterface, MacInterface {
 
-    public void selectMacByGiven(String Mac) throws ModelNotMatchByGivenException {
-    Mac = Mac.toLowerCase();
+    public void selectMacModelByGiven(String MacModel) throws ModelNotMatchByGivenException {
+        MacModel = MacModel.toLowerCase();
 
-        switch(Mac)
+        switch(MacModel)
         {
             case MBP.O13:
-                mbp.selectMacbookPro13();
+                mbp.selectMacbookPro13(); break;
             case MBP.O14:
-                mbp.selectMacbookPro14();
+                mbp.selectMacbookPro14(); break;
             case MBP.O16:
-                mbp.selectMacbookPro16();
+                mbp.selectMacbookPro16(); break;
             default:
-                throw new ModelNotMatchByGivenException(Mac);
+                throw new ModelNotMatchByGivenException(MacModel);
         }
     }
 }
