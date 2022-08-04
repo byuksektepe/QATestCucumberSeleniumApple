@@ -1,7 +1,7 @@
 package abstractions.utils.expectedConditions;
 
 import abstractions.helpers.AbstractHelper;
-import abstractions.utils.Constants;
+import abstractions.utils.Constants.Global;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
@@ -21,7 +21,7 @@ public class ClickabilityOfElement extends AbstractHelper implements ExpectedCon
     @Override
     public WebElement apply(WebDriver webDriver) {
 
-        final Wait<WebDriver> wait = new WebDriverWait(getDriver(), Duration.ofSeconds(Constants.TIMEOUT_SHORT));
+        final Wait<WebDriver> wait = new WebDriverWait(getDriver(), Duration.ofSeconds(Global.TIMEOUT_SHORT));
         try {
             return wait.until(ExpectedConditions.elementToBeClickable(element));
         } catch (StaleElementReferenceException | NoSuchElementException e) {

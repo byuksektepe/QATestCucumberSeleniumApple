@@ -1,6 +1,6 @@
 package abstractions.helpers;
 
-import static abstractions.utils.Constants.MAIN_URL;
+import static abstractions.utils.Constants.Global.MAIN_URL;
 
 
 public class NavigateHelper implements HelperInterface{

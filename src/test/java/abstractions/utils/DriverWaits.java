@@ -1,6 +1,7 @@
 package abstractions.utils;
 
 import abstractions.utils.expectedConditions.*;
+import abstractions.utils.Constants.Global;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -84,11 +85,11 @@ public class DriverWaits {
     }
 
     public Wait<WebDriver> waitLong() {
-        return new WebDriverWait(driverManager.getDriver(), Duration.ofSeconds(Constants.TIMEOUT_LONG));
+        return new WebDriverWait(driverManager.getDriver(), Duration.ofSeconds(Global.TIMEOUT_LONG));
     }
 
     public Wait<WebDriver> waitShort() {
-        return new WebDriverWait(driverManager.getDriver(), Duration.ofSeconds(Constants.TIMEOUT_SHORT));
+        return new WebDriverWait(driverManager.getDriver(), Duration.ofSeconds(Global.TIMEOUT_SHORT));
     }
 
     public void waitUntilJSReady() {

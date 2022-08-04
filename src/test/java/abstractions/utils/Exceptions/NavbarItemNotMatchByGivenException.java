@@ -1,7 +1,8 @@
 package abstractions.utils.Exceptions;
 import java.util.Arrays;
 
-import static abstractions.utils.Constants.APPLE_NAVBAR_ITEMS;
+import static abstractions.utils.Constants.Global.APPLE_NAVBAR_ITEMS;
+
 
 public class NavbarItemNotMatchByGivenException extends Exception{
 

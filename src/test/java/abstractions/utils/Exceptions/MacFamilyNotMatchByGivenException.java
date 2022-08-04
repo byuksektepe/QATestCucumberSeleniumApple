@@ -2,7 +2,7 @@ package abstractions.utils.Exceptions;
 
 import java.util.Arrays;
 
-import static abstractions.utils.Constants.MAC_PRODUCT_FAMILY;
+import static abstractions.utils.Constants.ProductFamily.MAC_PRODUCT_FAMILY;
 
 public class MacFamilyNotMatchByGivenException extends Exception {
     public MacFamilyNotMatchByGivenException(String GivenMacFamily){

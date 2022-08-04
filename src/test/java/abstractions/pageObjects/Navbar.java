@@ -8,7 +8,8 @@ import abstractions.utils.Locators;
 
 import java.util.Objects;
 
-import static abstractions.utils.Constants.APPLE_NAVBAR_ITEMS;
+import static abstractions.utils.Constants.Global.APPLE_NAVBAR_ITEMS;
+
 
 public class Navbar implements UtilsInterface {
 

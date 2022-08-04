@@ -6,7 +6,7 @@ import abstractions.utils.UtilsInterface;
 
 import java.util.Objects;
 
-import static abstractions.utils.Constants.MAC_PRODUCT_FAMILY;
+import static abstractions.utils.Constants.ProductFamily.MAC_PRODUCT_FAMILY;
 
 public class Mac implements UtilsInterface, MacInterface {
     private static final String ChapterNavLocator = "//nav[@id='chapternav']";

@@ -5,7 +5,8 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-import static abstractions.utils.Constants.DELAY_SHORT;
+import static abstractions.utils.Constants.Global.DELAY_SHORT;
+
 
 public class AssertionMethods extends AbstractHelper implements UtilsInterface
 {
