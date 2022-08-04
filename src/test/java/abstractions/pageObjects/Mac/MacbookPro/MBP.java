@@ -16,6 +16,8 @@ public class MBP implements UtilsInterface {
     public static final String O14 = "14\"";
     public static final String O16 = "16\"";
 
+    public static final String MacBookPro = "macbook pro";
+
 
     public void buyMacbookPro13(){
         clickMethods.click(Locators.XPath, selectorMBP13Locator);

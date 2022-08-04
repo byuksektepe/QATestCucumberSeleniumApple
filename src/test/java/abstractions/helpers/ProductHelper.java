@@ -48,7 +48,7 @@ public class ProductHelper implements HelperInterface{
         Config = Config.toLowerCase();
 
         switch (Family){
-            case _MAC: buyMac.selectMacConfigurationByGiven(Model, Config);
+            case _MAC: buyMac.selectMacConfigurationByGiven(Model, ModelFamily, Config);
                 break;
         }
     }

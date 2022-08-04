@@ -32,52 +32,56 @@ public class buyMac implements UtilsInterface, MacInterface {
     }
 
     public void selectMacConfigurationByGiven(String MacModel,
+                                              String MacFamily,
                                               String GivenConfig)
             throws
             ModelNotMatchByGivenException,
             ConfigurationNotMatchByDefined {
 
         MacModel = MacModel.toLowerCase();
+        MacFamily = MacFamily.toLowerCase();
         GivenConfig = GivenConfig.toLowerCase();
+
         boolean isConfigEx = true;
 
-        switch(MacModel)
-        {
-            case MBP.O13:
-                for (String defined_config : DefinedConfigurations_13) {
-                    if(Objects.equals(defined_config, GivenConfig)){
-                        String ProceedMainButtonLocator = "//button[@class='button button-block' and " +
-                                "contains(@data-autom, '13inch-" + defined_config + "')]";
-                        clickMethods.click(Locators.XPath, ProceedMainButtonLocator);
-                        isConfigEx = false;
-                        break;
+        if(Objects.equals(MacFamily, MBP.MacBookPro)) {
+            switch (MacModel) {
+                case MBP.O13:
+                    for (String defined_config : DefinedConfigurations_13) {
+                        if (Objects.equals(defined_config, GivenConfig)) {
+                            String ProceedMainButtonLocator = "//button[@class='button button-block' and " +
+                                    "contains(@data-autom, '13inch-" + defined_config + "')]";
+                            clickMethods.click(Locators.XPath, ProceedMainButtonLocator);
+                            isConfigEx = false;
+                            break;
+                        }
                     }
-                }
-                break;
-            case MBP.O14:
-                for (String defined_config : DefinedConfigurations_14) {
-                    if(Objects.equals(defined_config, GivenConfig)){
-                        String ProceedMainButtonLocator = "//button[@class='button button-block' and " +
-                                "contains(@data-autom, '14inch-" + defined_config + "')]";
-                        clickMethods.click(Locators.XPath, ProceedMainButtonLocator);
-                        isConfigEx = false;
-                        break;
+                    break;
+                case MBP.O14:
+                    for (String defined_config : DefinedConfigurations_14) {
+                        if (Objects.equals(defined_config, GivenConfig)) {
+                            String ProceedMainButtonLocator = "//button[@class='button button-block' and " +
+                                    "contains(@data-autom, '14inch-" + defined_config + "')]";
+                            clickMethods.click(Locators.XPath, ProceedMainButtonLocator);
+                            isConfigEx = false;
+                            break;
+                        }
                     }
-                }
-                break;
-            case MBP.O16:
-                for (String defined_config : DefinedConfigurations_16) {
-                    if(Objects.equals(defined_config, GivenConfig)){
-                        String ProceedMainButtonLocator = "//button[@class='button button-block' and " +
-                                "contains(@data-autom, '16inch-" + defined_config + "')]";
-                        clickMethods.click(Locators.XPath, ProceedMainButtonLocator);
-                        isConfigEx = false;
-                        break;
+                    break;
+                case MBP.O16:
+                    for (String defined_config : DefinedConfigurations_16) {
+                        if (Objects.equals(defined_config, GivenConfig)) {
+                            String ProceedMainButtonLocator = "//button[@class='button button-block' and " +
+                                    "contains(@data-autom, '16inch-" + defined_config + "')]";
+                            clickMethods.click(Locators.XPath, ProceedMainButtonLocator);
+                            isConfigEx = false;
+                            break;
+                        }
                     }
-                }
-                break;
-            default:
-                throw new ModelNotMatchByGivenException(MacModel);
+                    break;
+                default:
+                    throw new ModelNotMatchByGivenException(MacModel);
+            }
         }
         if (isConfigEx) { throw new ConfigurationNotMatchByDefined(GivenConfig);
         }
