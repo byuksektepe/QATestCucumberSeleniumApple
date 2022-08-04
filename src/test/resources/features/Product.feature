@@ -17,4 +17,4 @@ Feature: Product
 
   Examples:
     | Family | Product     | Model | Configuration |
-    | Mac    | Macbook Pro | 14"   | Base          |
+    | Mac    | Macbook Pro | 14"   | Better        |

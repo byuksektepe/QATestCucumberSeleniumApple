@@ -1,5 +1,6 @@
 package abstractions.helpers;
 
+import abstractions.utils.Exceptions.ConfigurationNotMatchByDefined;
 import abstractions.utils.Exceptions.MacFamilyNotMatchByGivenException;
 import abstractions.utils.Exceptions.ModelNotMatchByGivenException;
 
@@ -33,17 +34,22 @@ public class ProductHelper implements HelperInterface{
         }
     }
 
-    public void selectProductByGiven(String Family,
+    public void selectProductConfigByGiven(String Family,
                                      String ModelFamily,
                                      String Model,
-                                     String Config){
+                                     String Config)
+            throws
+            ConfigurationNotMatchByDefined,
+            ModelNotMatchByGivenException {
+
         Family = Family.toLowerCase();
         ModelFamily = ModelFamily.toLowerCase();
         Model = Model.toLowerCase();
         Config = Config.toLowerCase();
 
         switch (Family){
-            case _MAC: break;
+            case _MAC: buyMac.selectMacConfigurationByGiven(Model, Config);
+                break;
         }
     }
 }

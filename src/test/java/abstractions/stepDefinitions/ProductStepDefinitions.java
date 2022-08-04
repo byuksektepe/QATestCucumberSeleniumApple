@@ -1,9 +1,6 @@
 package abstractions.stepDefinitions;
 
-import abstractions.utils.Exceptions.MacFamilyNotMatchByGivenException;
-import abstractions.utils.Exceptions.ModelNotMatchByGivenException;
-import abstractions.utils.Exceptions.NavbarItemNotMatchByGivenException;
-import abstractions.utils.Exceptions.StringNotContainsByGivenException;
+import abstractions.utils.Exceptions.*;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -17,10 +14,12 @@ public class ProductStepDefinitions implements StepDefinitionsInterface{
 
     private String ProductFamily;
     private String ModelFamily;
+    private String Model;
     @And("Buy given: {string} product model")
     public void buyGivenProductModel(String Model)
             throws  ModelNotMatchByGivenException {
         productHelper.buyProductByGiven(ProductFamily, Model);
+        this.Model = Model;
     }
 
     @And("Add product to bag")
@@ -38,8 +37,8 @@ public class ProductStepDefinitions implements StepDefinitionsInterface{
             IllegalAccessException,
             NavbarItemNotMatchByGivenException {
 
-        this.ProductFamily = ProductFamily;
         navbar.navigateNavbarByGiven(ProductFamily);
+        this.ProductFamily = ProductFamily;
     }
 
     @And("Verify family page opened")
@@ -59,6 +58,11 @@ public class ProductStepDefinitions implements StepDefinitionsInterface{
     }
 
     @And("Select given: {string} product configuration")
-    public void selectGivenProductConfiguration(String Config) {
+    public void selectGivenProductConfiguration(String Config)
+            throws
+            ConfigurationNotMatchByDefined,
+            ModelNotMatchByGivenException {
+
+        productHelper.selectProductConfigByGiven(ProductFamily, ModelFamily, Model, Config);
     }
 }
