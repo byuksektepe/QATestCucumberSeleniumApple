@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import static abstractions.utils.Constants.Global.DELAY_SHORT;
+import static org.junit.Assert.fail;
 
 
 public class AssertionMethods extends AbstractHelper implements UtilsInterface

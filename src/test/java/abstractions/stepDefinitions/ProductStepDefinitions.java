@@ -15,6 +15,7 @@ import java.lang.reflect.InvocationTargetException;
 public class ProductStepDefinitions implements StepDefinitionsInterface{
 
     private String ProductFamily;
+    private String ModelFamily;
     @And("Buy given: {string} product model")
     public void buyGivenProductModel(String Model) {
     }
@@ -46,10 +47,12 @@ public class ProductStepDefinitions implements StepDefinitionsInterface{
     @When("Click product: {string} button")
     public void clickProductButton(String ModelFamily) throws MacFamilyNotMatchByGivenException {
         productHelper.redirectToProductByGiven(ProductFamily, ModelFamily);
+        this.ModelFamily = ModelFamily;
     }
 
     @And("Verify product page opened")
-    public void verifyProductPageOpened() {
+    public void verifyProductPageOpened() throws StringNotContainsByGivenException {
+        assertionMethods.verifyOpenedPageByGiven(ModelFamily);
     }
 
     @And("Select given: {string} product configuration")
