@@ -17,7 +17,6 @@ public class SearchResults implements UtilsInterface {
     }
 
     public void ClickFirstResultInResults(){
-        navigateMethods.scrollToElement(Locators.XPath, FirstResultLocator);
         clickMethods.click(Locators.XPath, FirstResultLocator);
     }
 

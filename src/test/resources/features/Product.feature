@@ -1,6 +1,6 @@
 Feature: Product
   You need to provide model linked with Family.
-  Like: <Mac>    <Macbook Pro> <14">  [<Base>?<Better>]
+  Like: <Mac>    <Macbook Pro> <14">  [<Entry>?<Better>]
   Or:   <Iphone> <Iphone 13>   <Pro>  [<Better>?<Ultimate>]
 
   @Smoke @Product
@@ -17,4 +17,4 @@ Feature: Product
 
   Examples:
     | Family | Product     | Model | Configuration |
-    | Mac    | Macbook Pro | 14"   | Better        |
+    | Mac    | Macbook Pro | 13"   | Entry         |

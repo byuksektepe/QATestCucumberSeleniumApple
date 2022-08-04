@@ -22,7 +22,6 @@ public class ClickElementMethods extends AbstractHelper implements UtilsInterfac
 
     public void doubleClick(String locatorType, String locatorValue) {
         element = getDriverWait().waitShort().until(ExpectedConditions.presenceOfElementLocated(selectElementByType.getelementbytype(locatorType, locatorValue)));
-
         Actions action = new Actions(getDriver());
         action.moveToElement(element).doubleClick().perform();
     }
