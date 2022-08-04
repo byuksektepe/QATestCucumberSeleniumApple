@@ -19,8 +19,7 @@ public class ProductStepDefinitions implements StepDefinitionsInterface{
     private String ModelFamily;
     @And("Buy given: {string} product model")
     public void buyGivenProductModel(String Model)
-            throws MacFamilyNotMatchByGivenException, ModelNotMatchByGivenException {
-
+            throws  ModelNotMatchByGivenException {
         productHelper.buyProductByGiven(ProductFamily, Model);
     }
 
@@ -60,6 +59,6 @@ public class ProductStepDefinitions implements StepDefinitionsInterface{
     }
 
     @And("Select given: {string} product configuration")
-    public void selectGivenProductConfiguration(String arg0) {
+    public void selectGivenProductConfiguration(String Config) {
     }
 }

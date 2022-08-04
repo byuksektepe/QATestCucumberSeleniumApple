@@ -16,17 +16,18 @@ public class MBP implements UtilsInterface {
     public static final String O14 = "14\"";
     public static final String O16 = "16\"";
 
-    public void selectMacbookPro13(){
+
+    public void buyMacbookPro13(){
         navigateMethods.scrollToElement(Locators.XPath, selectorMBP13Locator);
         clickMethods.click(Locators.XPath, selectorMBP13Locator);
     }
 
-    public void selectMacbookPro14(){
+    public void buyMacbookPro14(){
         navigateMethods.scrollToElement(Locators.XPath, selectorMBP14Locator);
         clickMethods.click(Locators.XPath, selectorMBP14Locator);
     }
 
-    public void selectMacbookPro16(){
+    public void buyMacbookPro16(){
         navigateMethods.scrollToElement(Locators.XPath, selectorMBP16Locator);
         clickMethods.click(Locators.XPath, selectorMBP16Locator);
     }

@@ -23,14 +23,27 @@ public class ProductHelper implements HelperInterface{
     public void buyProductByGiven(String Family,
                                   String Model)
 
-            throws MacFamilyNotMatchByGivenException,
-            ModelNotMatchByGivenException {
+            throws ModelNotMatchByGivenException {
 
         Family = Family.toLowerCase();
         Model = Model.toLowerCase();
 
         switch (Family){
             case _MAC: buyMac.selectMacModelByGiven(Model); break;
+        }
+    }
+
+    public void selectProductByGiven(String Family,
+                                     String ModelFamily,
+                                     String Model,
+                                     String Config){
+        Family = Family.toLowerCase();
+        ModelFamily = ModelFamily.toLowerCase();
+        Model = Model.toLowerCase();
+        Config = Config.toLowerCase();
+
+        switch (Family){
+            case _MAC: break;
         }
     }
 }
