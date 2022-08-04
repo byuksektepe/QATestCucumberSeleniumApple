@@ -5,6 +5,8 @@ import abstractions.utils.Exceptions.ModelNotMatchByGivenException;
 
 import java.util.Objects;
 
+import static abstractions.utils.Constants.ProductFamily._MAC;
+
 
 public class ProductHelper implements HelperInterface{
 
@@ -14,7 +16,7 @@ public class ProductHelper implements HelperInterface{
             throws MacFamilyNotMatchByGivenException {
         Family = Family.toLowerCase();
         switch (Family){
-            case "mac": mac.selectMacFamilyByGiven(ModelFamily);
+            case _MAC: mac.selectMacFamilyByGiven(ModelFamily);
         }
     }
 
@@ -28,7 +30,7 @@ public class ProductHelper implements HelperInterface{
         Model = Model.toLowerCase();
 
         switch (Family){
-            case "mac": buyMac.selectMacModelByGiven(Model); break;
+            case _MAC: buyMac.selectMacModelByGiven(Model); break;
         }
     }
 }

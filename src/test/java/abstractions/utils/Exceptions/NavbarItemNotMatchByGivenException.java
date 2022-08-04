@@ -8,7 +8,10 @@ import static org.junit.Assert.fail;
 public class NavbarItemNotMatchByGivenException extends Exception{
 
     public NavbarItemNotMatchByGivenException(String NavbarItem){
-        String exceptionMessage = String.format("Given navbar item name '%s' not match any defined navbar items '%s'.", NavbarItem, Arrays.toString(APPLE_NAVBAR_ITEMS));
+        String exceptionMessage = String.format(
+                "Given navbar item name '%s' not match any defined navbar items '%s'.",
+                NavbarItem, Arrays.toString(APPLE_NAVBAR_ITEMS));
+
         String currMethodName = new Throwable()
                 .getStackTrace()[1]
                 .getMethodName();

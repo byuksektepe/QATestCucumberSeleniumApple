@@ -10,6 +10,7 @@ import static abstractions.utils.Constants.ProductFamily.MAC_PRODUCT_FAMILY;
 
 public class Mac implements UtilsInterface, MacInterface {
     private static final String ChapterNavLocator = "//nav[@id='chapternav']";
+    public static final String MAC = "mac";
 
     public void selectMacFamilyByGiven(String MacFamily) throws MacFamilyNotMatchByGivenException {
         MacFamily = MacFamily.toLowerCase();

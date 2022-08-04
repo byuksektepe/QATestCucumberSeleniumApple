@@ -2,8 +2,17 @@ package abstractions.utils.Constants;
 
 public class ProductFamily {
 
-    public static final String[] APPLE_PRODUCT_FAMILY = {"mac", "ipad", "iphone",
-            "watch", "airpods", "tvhome", "accessories"};
+
+    /**    Apple's Product Family Names    **/
+
+    public static final String _MAC = "mac";
+    public static final String _IPAD = "ipad";
+    public static final String _IPHONE = "mac";
+    public static final String _WATCH = "watch";
+    public static final String _AIRPODS = "airpods";
+    public static final String _TV_HOME = "tvhome";
+
+    /** ! Do not change unless necessary ! **/
 
     public static final String[] MAC_PRODUCT_FAMILY = {"macbook air", "macbook pro",
             "imac 24\"", "mac mini", "mac studio", "mac pro"};
