@@ -3,7 +3,7 @@ package abstractions.utils.Constants;
 public class Global {
 
 
-        public static final String MAIN_URL = "https://www.apple.com/";
+        public static final String MAIN_URL = "https://www.apple.com";
 
         public static final String[] APPLE_NAVBAR_ITEMS = {"logo", "store", "mac",
                 "ipad", "iphone", "watch", "airpods", "tvhome", "onlyonapple",

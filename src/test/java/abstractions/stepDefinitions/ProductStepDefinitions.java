@@ -15,6 +15,8 @@ public class ProductStepDefinitions implements StepDefinitionsInterface{
     private String ProductFamily;
     private String ModelFamily;
     private String Model;
+    private String ReceivedProductUrl;
+
     @And("Buy given: {string} product model")
     public void buyGivenProductModel(String Model)
             throws  ModelNotMatchByGivenException {
@@ -24,11 +26,13 @@ public class ProductStepDefinitions implements StepDefinitionsInterface{
 
     @And("Add product to bag")
     public void addProductToBag() {
+        this.ReceivedProductUrl = navigateMethods.getCurrentPageUrlAndIgnoreMainUrl();
         productHelper.addProductToTheBag();
     }
 
     @Then("Verify product added to bag")
     public void verifyProductAddedToBag() {
+
     }
 
     @And("Click navbar item {string}")

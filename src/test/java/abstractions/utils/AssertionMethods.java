@@ -70,4 +70,17 @@ public class AssertionMethods extends AbstractHelper implements UtilsInterface
             Thread.currentThread().interrupt();
         }
     }
+
+    /**
+     * method to get attribute value
+     *
+     * @param locatorType    : String : Locator type (id, name, class, xpath, css)
+     * @param locatorValue    : String : Locator value
+     * @param attributeName : String : attribute name
+     * @return String
+     */
+    public String getElementAttribute(String locatorType, String locatorValue, String attributeName) {
+        element = getDriverWait().waitShort().until(ExpectedConditions.presenceOfElementLocated(selectElementByType.getelementbytype(locatorType, locatorValue)));
+        return element.getAttribute(attributeName);
+    }
 }

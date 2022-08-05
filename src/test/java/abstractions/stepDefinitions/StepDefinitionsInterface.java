@@ -7,6 +7,7 @@ import abstractions.pageObjects.Mac.BuyMac.BuyMac;
 import abstractions.utils.AssertionMethods;
 import abstractions.pageObjects.Navbar;
 import abstractions.pageObjects.SearchResults;
+import abstractions.utils.NavigateMethods;
 
 public interface StepDefinitionsInterface {
     Navbar navbar = new Navbar();
@@ -18,4 +19,5 @@ public interface StepDefinitionsInterface {
 
     BuyMac buyMac = new BuyMac();
     AssertionMethods assertionMethods = new AssertionMethods();
+    NavigateMethods navigateMethods = new NavigateMethods();
 }

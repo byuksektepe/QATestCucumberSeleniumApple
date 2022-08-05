@@ -5,6 +5,8 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
+import static abstractions.utils.Constants.Global.MAIN_URL;
+
 public class NavigateMethods extends AbstractHelper implements UtilsInterface {
     private WebElement element = null;
     private String old_win = null;
@@ -22,6 +24,10 @@ public class NavigateMethods extends AbstractHelper implements UtilsInterface {
 
     public String getCurrentPageUrl(){
         return getDriver().getCurrentUrl();
+    }
+
+    public String getCurrentPageUrlAndIgnoreMainUrl(){
+        return (this.getCurrentPageUrl()).replace(MAIN_URL, "");
     }
 
     public void switchToNewWindow() {
