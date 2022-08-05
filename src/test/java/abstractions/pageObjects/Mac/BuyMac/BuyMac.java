@@ -13,7 +13,7 @@ import abstractions.pageObjects.Mac.MacbookPro.MBP;
 import  abstractions.pageObjects.Mac.MacbookPro.Models.*;
 
 
-public class buyMac implements UtilsInterface, MacInterface {
+public class BuyMac implements UtilsInterface, MacInterface {
 
     public void selectMacModelByGiven(String MacModel) throws ModelNotMatchByGivenException {
         MacModel = MacModel.toLowerCase();

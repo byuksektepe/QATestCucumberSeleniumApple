@@ -24,6 +24,7 @@ public class ProductStepDefinitions implements StepDefinitionsInterface{
 
     @And("Add product to bag")
     public void addProductToBag() {
+        productHelper.addProductToTheBag();
     }
 
     @Then("Verify product added to bag")

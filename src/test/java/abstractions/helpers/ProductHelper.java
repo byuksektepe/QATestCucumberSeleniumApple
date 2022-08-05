@@ -3,11 +3,14 @@ package abstractions.helpers;
 import abstractions.utils.Exceptions.ConfigurationNotMatchByDefinedException;
 import abstractions.utils.Exceptions.MacFamilyNotMatchByGivenException;
 import abstractions.utils.Exceptions.ModelNotMatchByGivenException;
+import abstractions.utils.Locators;
+import abstractions.utils.UtilsInterface;
 
 import static abstractions.utils.Constants.ProductFamily._MAC;
 
+public class ProductHelper implements HelperInterface, UtilsInterface {
 
-public class ProductHelper implements HelperInterface{
+    private static final String AddToBagButtonLocator = "//button[@value='add-to-cart']";
 
     public void redirectToProductByGiven(String Family,
                                          String ModelFamily)
@@ -49,5 +52,9 @@ public class ProductHelper implements HelperInterface{
             case _MAC: buyMac.selectMacConfigurationByGiven(Model, ModelFamily, Config);
                 break;
         }
+    }
+
+    public void addProductToTheBag(){
+        clickMethods.click(Locators.XPath, AddToBagButtonLocator);
     }
 }
