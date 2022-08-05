@@ -60,7 +60,7 @@ public class ProductStepDefinitions implements StepDefinitionsInterface{
     @And("Select given: {string} product configuration")
     public void selectGivenProductConfiguration(String Config)
             throws
-            ConfigurationNotMatchByDefined,
+            ConfigurationNotMatchByDefinedException,
             ModelNotMatchByGivenException {
 
         productHelper.selectProductConfigByGiven(ProductFamily, ModelFamily, Model, Config);

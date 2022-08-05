@@ -1,10 +1,8 @@
 package abstractions.helpers;
 
-import abstractions.utils.Exceptions.ConfigurationNotMatchByDefined;
+import abstractions.utils.Exceptions.ConfigurationNotMatchByDefinedException;
 import abstractions.utils.Exceptions.MacFamilyNotMatchByGivenException;
 import abstractions.utils.Exceptions.ModelNotMatchByGivenException;
-
-import java.util.Objects;
 
 import static abstractions.utils.Constants.ProductFamily._MAC;
 
@@ -39,7 +37,7 @@ public class ProductHelper implements HelperInterface{
                                      String Model,
                                      String Config)
             throws
-            ConfigurationNotMatchByDefined,
+            ConfigurationNotMatchByDefinedException,
             ModelNotMatchByGivenException {
 
         Family = Family.toLowerCase();

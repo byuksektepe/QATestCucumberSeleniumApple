@@ -2,7 +2,7 @@ package abstractions.pageObjects.Mac.BuyMac;
 
 import abstractions.pageObjects.Mac.MacbookPro.MBP;
 import abstractions.pageObjects.Mac.MacInterface;
-import abstractions.utils.Exceptions.ConfigurationNotMatchByDefined;
+import abstractions.utils.Exceptions.ConfigurationNotMatchByDefinedException;
 import abstractions.utils.Exceptions.ModelNotMatchByGivenException;
 import abstractions.utils.Locators;
 import abstractions.utils.UtilsInterface;
@@ -36,7 +36,7 @@ public class buyMac implements UtilsInterface, MacInterface {
                                               String GivenConfig)
             throws
             ModelNotMatchByGivenException,
-            ConfigurationNotMatchByDefined {
+            ConfigurationNotMatchByDefinedException {
 
         MacModel = MacModel.toLowerCase();
         MacFamily = MacFamily.toLowerCase();
@@ -83,7 +83,7 @@ public class buyMac implements UtilsInterface, MacInterface {
                     throw new ModelNotMatchByGivenException(MacModel);
             }
         }
-        if (isConfigEx) { throw new ConfigurationNotMatchByDefined(GivenConfig);
+        if (isConfigEx) { throw new ConfigurationNotMatchByDefinedException(GivenConfig);
         }
     }
 }
