@@ -6,7 +6,4 @@ import abstractions.utils.UtilsInterface;
 
 public class CustomizeMac implements MacInterface, UtilsInterface {
 
-    public String getCustomizedMacLink{
-
-    }
 }

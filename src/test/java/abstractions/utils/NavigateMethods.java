@@ -20,6 +20,10 @@ public class NavigateMethods extends AbstractHelper implements UtilsInterface {
         executor.executeScript("arguments[0].scrollIntoView();", element);
     }
 
+    public String getCurrentPageUrl(){
+        return getDriver().getCurrentUrl();
+    }
+
     public void switchToNewWindow() {
         old_win = getDriver().getWindowHandle();
         for (String winHandle : getDriver().getWindowHandles())
