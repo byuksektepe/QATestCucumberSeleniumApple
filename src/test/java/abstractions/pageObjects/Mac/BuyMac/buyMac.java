@@ -1,6 +1,6 @@
 package abstractions.pageObjects.Mac.BuyMac;
 
-import abstractions.pageObjects.Mac.MacbookPro.MBP;
+
 import abstractions.pageObjects.Mac.MacInterface;
 import abstractions.utils.Exceptions.ConfigurationNotMatchByDefinedException;
 import abstractions.utils.Exceptions.ModelNotMatchByGivenException;
@@ -9,9 +9,9 @@ import abstractions.utils.UtilsInterface;
 
 import java.util.Objects;
 
-import static abstractions.pageObjects.Mac.MacbookPro.Models.MBP13.DefinedConfigurations_13;
-import static abstractions.pageObjects.Mac.MacbookPro.Models.MBP14.DefinedConfigurations_14;
-import static abstractions.pageObjects.Mac.MacbookPro.Models.MBP16.DefinedConfigurations_16;
+import abstractions.pageObjects.Mac.MacbookPro.MBP;
+import  abstractions.pageObjects.Mac.MacbookPro.Models.*;
+
 
 public class buyMac implements UtilsInterface, MacInterface {
 
@@ -47,7 +47,7 @@ public class buyMac implements UtilsInterface, MacInterface {
         if(Objects.equals(MacFamily, MBP.MacBookPro)) {
             switch (MacModel) {
                 case MBP.O13:
-                    for (String defined_config : DefinedConfigurations_13) {
+                    for (String defined_config : MBP13.DefinedConfigurations) {
                         if (Objects.equals(defined_config, GivenConfig)) {
                             String ProceedMainButtonLocator = "//button[@class='button button-block' and " +
                                     "contains(@data-autom, '13inch-" + defined_config + "')]";
@@ -58,7 +58,7 @@ public class buyMac implements UtilsInterface, MacInterface {
                     }
                     break;
                 case MBP.O14:
-                    for (String defined_config : DefinedConfigurations_14) {
+                    for (String defined_config : MBP14.DefinedConfigurations) {
                         if (Objects.equals(defined_config, GivenConfig)) {
                             String ProceedMainButtonLocator = "//button[@class='button button-block' and " +
                                     "contains(@data-autom, '14inch-" + defined_config + "')]";
@@ -69,7 +69,7 @@ public class buyMac implements UtilsInterface, MacInterface {
                     }
                     break;
                 case MBP.O16:
-                    for (String defined_config : DefinedConfigurations_16) {
+                    for (String defined_config : MBP16.DefinedConfigurations) {
                         if (Objects.equals(defined_config, GivenConfig)) {
                             String ProceedMainButtonLocator = "//button[@class='button button-block' and " +
                                     "contains(@data-autom, '16inch-" + defined_config + "')]";

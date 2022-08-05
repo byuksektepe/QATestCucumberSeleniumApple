@@ -4,6 +4,6 @@ import abstractions.pageObjects.Mac.MacbookPro.MBP;
 import abstractions.utils.UtilsInterface;
 
 public class MBP14 extends MBP implements UtilsInterface {
-    public static final String[] DefinedConfigurations_14 = {"better", "best"};
+    public static final String[] DefinedConfigurations = {"better", "best"};
 
 }
