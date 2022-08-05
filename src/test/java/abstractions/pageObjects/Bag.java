@@ -13,7 +13,7 @@ public class Bag implements UtilsInterface {
         String ReceivedUrlFromBag = assertionMethods.getElementAttribute
                 (Locators.XPath, ProductUrlInBagLocator, "href");
         if(!Objects.equals(Url, ReceivedUrlFromBag)){
-            throw new Exception("lol");
+            throw new Exception("1 : "+Url+" : 2 :"+ReceivedUrlFromBag);
         }
     }
 }

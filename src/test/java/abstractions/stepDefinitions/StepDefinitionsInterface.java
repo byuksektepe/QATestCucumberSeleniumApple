@@ -2,6 +2,7 @@ package abstractions.stepDefinitions;
 
 import abstractions.helpers.NavigateHelper;
 import abstractions.helpers.ProductHelper;
+import abstractions.pageObjects.Bag;
 import abstractions.pageObjects.Footer;
 import abstractions.pageObjects.Mac.BuyMac.BuyMac;
 import abstractions.utils.AssertionMethods;
@@ -16,6 +17,8 @@ public interface StepDefinitionsInterface {
     NavigateHelper navigateHelper = new NavigateHelper();
 
     ProductHelper productHelper = new ProductHelper();
+
+    Bag bag = new Bag();
 
     BuyMac buyMac = new BuyMac();
     AssertionMethods assertionMethods = new AssertionMethods();

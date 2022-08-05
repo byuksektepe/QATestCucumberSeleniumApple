@@ -26,13 +26,13 @@ public class ProductStepDefinitions implements StepDefinitionsInterface{
 
     @And("Add product to bag")
     public void addProductToBag() {
-        this.ReceivedProductUrl = navigateMethods.getCurrentPageUrlAndIgnoreMainUrl();
+        this.ReceivedProductUrl = navigateMethods.getCurrentPageUrl();
         productHelper.addProductToTheBag();
     }
 
     @Then("Verify product added to bag")
-    public void verifyProductAddedToBag() {
-
+    public void verifyProductAddedToBag() throws Exception {
+        bag.verifyProductAddedToBagByGiven(ReceivedProductUrl);
     }
 
     @And("Click navbar item {string}")
