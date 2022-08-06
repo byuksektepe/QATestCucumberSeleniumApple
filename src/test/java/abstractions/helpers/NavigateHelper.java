@@ -7,7 +7,10 @@ public class NavigateHelper implements HelperInterface{
 
     public void navigateToMainUrl(){
 
-        dM.getDriver().navigate().to(MAIN_URL);
+        dM.getDriver()
+                .navigate()
+                .to(MAIN_URL);
+
         dW.waitUntilJSReady();
     }
 

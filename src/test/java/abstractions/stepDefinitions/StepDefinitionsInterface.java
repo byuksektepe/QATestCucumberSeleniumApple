@@ -15,11 +15,8 @@ public interface StepDefinitionsInterface {
     Footer footer = new Footer();
     SearchResults searchResults = new SearchResults();
     NavigateHelper navigateHelper = new NavigateHelper();
-
     ProductHelper productHelper = new ProductHelper();
-
     Bag bag = new Bag();
-
     BuyMac buyMac = new BuyMac();
     AssertionMethods assertionMethods = new AssertionMethods();
     NavigateMethods navigateMethods = new NavigateMethods();

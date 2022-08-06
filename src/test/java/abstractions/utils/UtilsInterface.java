@@ -7,5 +7,8 @@ public interface UtilsInterface {
     NavigateMethods navigateMethods = new NavigateMethods();
     DriverManager dM = new DriverManager();
     DriverWaits dW = new DriverWaits(dM);
+
+    Transformer transformer = new Transformer();
+
     SelectElementByType selectElementByType = new SelectElementByType();
 }
