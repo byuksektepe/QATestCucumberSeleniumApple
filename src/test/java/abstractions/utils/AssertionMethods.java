@@ -83,4 +83,17 @@ public class AssertionMethods extends AbstractHelper implements UtilsInterface
         element = getDriverWait().waitShort().until(ExpectedConditions.presenceOfElementLocated(selectElementByType.getelementbytype(locatorType, locatorValue)));
         return element.getAttribute(attributeName);
     }
+
+    /**
+     * Method to get element text
+     *
+     * @param locatorType : String : Locator type (id, name, class, xpath, css)
+     * @param locatorValue : String : Locator value
+     * @return String
+     */
+    public String getElementText(String locatorType, String locatorValue) {
+        element = getDriverWait().waitShort().until(ExpectedConditions.presenceOfElementLocated(selectElementByType.getelementbytype(locatorType, locatorValue)));
+        return element.getText();
+
+    }
 }

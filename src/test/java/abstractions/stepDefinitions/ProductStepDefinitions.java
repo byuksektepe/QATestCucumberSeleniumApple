@@ -15,7 +15,7 @@ public class ProductStepDefinitions implements StepDefinitionsInterface{
     private String ProductFamily;
     private String ModelFamily;
     private String Model;
-    private String ReceivedProductUrl;
+    private String ReceivedProductTitle;
 
     @And("Buy given: {string} product model")
     public void buyGivenProductModel(String Model)
@@ -26,13 +26,13 @@ public class ProductStepDefinitions implements StepDefinitionsInterface{
 
     @And("Add product to bag")
     public void addProductToBag() {
-        this.ReceivedProductUrl = navigateMethods.getCurrentPageUrl();
+        this.ReceivedProductTitle = productHelper.getProductTitleByGiven(ProductFamily);
         productHelper.addProductToTheBag();
     }
 
     @Then("Verify product added to bag")
-    public void verifyProductAddedToBag() throws Exception {
-        bag.verifyProductAddedToBagByGiven(ReceivedProductUrl);
+    public void verifyProductAddedToBag() throws StringNotContainsByGivenException {
+        bag.verifyProductAddedToBagByGiven(ReceivedProductTitle);
     }
 
     @And("Click navbar item {string}")

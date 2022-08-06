@@ -32,7 +32,8 @@ public class ProductHelper implements HelperInterface, UtilsInterface {
         Model = Model.toLowerCase();
 
         switch (Family){
-            case _MAC: buyMac.selectMacModelByGiven(Model); break;
+            case _MAC: buyMac.selectMacModelByGiven(Model);
+                break;
         }
     }
 
@@ -55,12 +56,18 @@ public class ProductHelper implements HelperInterface, UtilsInterface {
         }
     }
 
+    public String getProductTitleByGiven(String Family){
+        Family = Family.toLowerCase();
+        switch (Family){
+            case _MAC: return customizeMac.getCustomizedMacTitle();
+            default: return null;
+        }
+    }
+
     public void addProductToTheBag(){
         clickMethods.click(Locators.XPath, AddToBagButtonLocator);
 
         boolean isElDisplayed = assertionMethods.isElementDisplayed(Locators.XPath, ReviewBagButtonLocator);
         if(isElDisplayed){ clickMethods.click(Locators.XPath, ReviewBagButtonLocator); }
-
-
     }
 }
