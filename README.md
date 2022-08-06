@@ -56,5 +56,88 @@ Note that the web drivers in this project are adjusted according to my agent bro
 
 ### Execute Tests Using TeamCity
 ![image](https://user-images.githubusercontent.com/61010367/182302114-fb97fe04-a0ad-4d02-b2e6-ccf534397a8d.png)
+### Project Tree
+
+```
+📦 
+├─ .gitignore
+├─ .idea
+│  ├─ .gitignore
+│  ├─ compiler.xml
+│  ├─ jarRepositories.xml
+│  ├─ misc.xml
+│  ├─ uiDesigner.xml
+│  └─ vcs.xml
+├─ README.md
+├─ pom.xml
+└─ src
+   └─ test
+      ├─ java
+      │  └─ abstractions
+      │     ├─ RuntimeTest.java
+      │     ├─ helpers
+      │     │  ├─ AbstractHelper.java
+      │     │  ├─ HelperInterface.java
+      │     │  ├─ NavigateHelper.java
+      │     │  └─ ProductHelper.java
+      │     ├─ pageObjects
+      │     │  ├─ Bag.java
+      │     │  ├─ Footer.java
+      │     │  ├─ Mac
+      │     │  │  ├─ BuyMac
+      │     │  │  │  ├─ BuyMac.java
+      │     │  │  │  └─ CustomizeMac.java
+      │     │  │  ├─ Mac.java
+      │     │  │  ├─ MacInterface.java
+      │     │  │  └─ MacbookPro
+      │     │  │     ├─ MBP.java
+      │     │  │     └─ Models
+      │     │  │        ├─ MBP13.java
+      │     │  │        ├─ MBP14.java
+      │     │  │        └─ MBP16.java
+      │     │  ├─ Navbar.java
+      │     │  └─ SearchResults.java
+      │     ├─ stepDefinitions
+      │     │  ├─ Hook.java
+      │     │  ├─ ProductStepDefinitions.java
+      │     │  ├─ SearchStepDefinitions.java
+      │     │  └─ StepDefinitionsInterface.java
+      │     └─ utils
+      │        ├─ AssertionMethods.java
+      │        ├─ ClickElementMethods.java
+      │        ├─ Constants
+      │        │  ├─ Global.java
+      │        │  ├─ ModelConfigurations.java
+      │        │  └─ ProductFamily.java
+      │        ├─ DriverManager.java
+      │        ├─ DriverWaits.java
+      │        ├─ Exceptions
+      │        │  ├─ ConfigurationNotMatchByDefinedException.java
+      │        │  ├─ MacFamilyNotMatchByGivenException.java
+      │        │  ├─ ModelNotMatchByGivenException.java
+      │        │  ├─ NavbarItemNotMatchByGivenException.java
+      │        │  ├─ StringNotContainsByGivenException.java
+      │        │  └─ StringNotMatchByGivenException.java
+      │        ├─ InputMethods.java
+      │        ├─ Locators.java
+      │        ├─ NavigateMethods.java
+      │        ├─ SelectElementByType.java
+      │        ├─ UtilsInterface.java
+      │        └─ expectedConditions
+      │           ├─ ClickabilityOfElement.java
+      │           ├─ ClickabilityOfElementByLocator.java
+      │           ├─ InvisibilityOfElement.java
+      │           ├─ InvisibilityOfElementByLocator.java
+      │           ├─ VisibilityOfElement.java
+      │           └─ VisibilityOfElementByLocator.java
+      └─ resources
+         ├─ drivers
+         │  ├─ chromedriver.exe
+         │  ├─ geckodriver.exe
+         │  └─ msedgedriver.exe
+         └─ features
+            ├─ Product.feature
+            └─ Search.feature
+```
 
 
