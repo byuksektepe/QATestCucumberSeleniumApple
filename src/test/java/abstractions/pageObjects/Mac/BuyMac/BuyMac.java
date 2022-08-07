@@ -20,11 +20,11 @@ public class BuyMac implements UtilsInterface, MacInterface {
 
         switch(MacModel)
         {
-            case MBP.O13:
+            case MBP_13.Model:
                 mbp.buyMacbookPro13(); break;
-            case MBP.O14:
+            case MBP_14.Model:
                 mbp.buyMacbookPro14(); break;
-            case MBP.O16:
+            case MBP_16.Model:
                 mbp.buyMacbookPro16(); break;
             default:
                 throw new ModelNotMatchByGivenException(MacModel);
@@ -44,10 +44,10 @@ public class BuyMac implements UtilsInterface, MacInterface {
 
         boolean isConfigEx = true;
 
-        if(Objects.equals(MacFamily, MBP.MacBookPro)) {
+        if(Objects.equals(MacFamily, MBP.Name)){
             switch (MacModel) {
-                case MBP.O13:
-                    for (String defined_config : MBP13.DefinedConfigurations) {
+                case MBP_13.Model:
+                    for (String defined_config : MBP_13.DefinedConfigurations) {
                         if (Objects.equals(defined_config, GivenConfig)) {
                             String ProceedMainButtonLocator = "//button[@class='button button-block' and " +
                                     "contains(@data-autom, '13inch-" + defined_config + "')]";
@@ -57,8 +57,8 @@ public class BuyMac implements UtilsInterface, MacInterface {
                         }
                     }
                     break;
-                case MBP.O14:
-                    for (String defined_config : MBP14.DefinedConfigurations) {
+                case MBP_14.Model:
+                    for (String defined_config : MBP_14.DefinedConfigurations) {
                         if (Objects.equals(defined_config, GivenConfig)) {
                             String ProceedMainButtonLocator = "//button[@class='button button-block' and " +
                                     "contains(@data-autom, '14inch-" + defined_config + "')]";
@@ -68,8 +68,8 @@ public class BuyMac implements UtilsInterface, MacInterface {
                         }
                     }
                     break;
-                case MBP.O16:
-                    for (String defined_config : MBP16.DefinedConfigurations) {
+                case MBP_16.Model:
+                    for (String defined_config : MBP_16.DefinedConfigurations) {
                         if (Objects.equals(defined_config, GivenConfig)) {
                             String ProceedMainButtonLocator = "//button[@class='button button-block' and " +
                                     "contains(@data-autom, '16inch-" + defined_config + "')]";

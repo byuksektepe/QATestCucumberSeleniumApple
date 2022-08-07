@@ -11,12 +11,15 @@ public class MBP implements UtilsInterface {
     private static final String selectorMBP14Locator = selectorMainLocator + "//div[@class='mbp14 links']/a";
     private static final String selectorMBP16Locator = selectorMainLocator + "//div[@class='mbp16 links']/a";
 
+    public static final String Name = "macbook pro";
+
+
     /** Model Names **/
     public static final String O13 = "13\"";
     public static final String O14 = "14\"";
     public static final String O16 = "16\"";
 
-    public static final String MacBookPro = "macbook pro";
+
 
 
     public void buyMacbookPro13(){
