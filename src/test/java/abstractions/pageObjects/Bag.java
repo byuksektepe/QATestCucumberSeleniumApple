@@ -1,31 +1,33 @@
 package abstractions.pageObjects;
 
 import abstractions.utils.Exceptions.StringNotContainsByGivenException;
+import abstractions.utils.Exceptions.StringNotMatchByGivenException;
 import abstractions.utils.Locators;
 import abstractions.utils.UtilsInterface;
 import org.openqa.selenium.By;
 
+import java.util.Objects;
+
 public class Bag implements UtilsInterface {
 
-    private static final String ProductTitleInBagLocator = "//div[@class='rs-iteminfo-details']" +
-                                                           "//h2";
-    public void verifyProductAddedToBagByGiven(String Title) throws StringNotContainsByGivenException {
-        dW.waitForElementVisible(By.xpath(ProductTitleInBagLocator));
+    private static final String ProductHardwareInBagLocator = "//div[@class='rs-macdetails']//ul[preceding-sibling::h3[1]='Hardware']";
+    public void verifyProductAddedToBagByGiven(String Hardware) throws StringNotMatchByGivenException {
 
-        String ReceivedTitleFromBag = assertionMethods
-                .getElementText
-                (Locators.XPath, ProductTitleInBagLocator);
+        assertionMethods.isWait(1000);
+        String ReceivedHardwareFromBag = assertionMethods
+                .getElementAttribute(Locators
+                        .XPath, ProductHardwareInBagLocator, "textContent");
 
-        String FormattedTitle = transformer
-                .replaceAllNonCharValue(Title)
+        String FormattedHardware = transformer
+                .replaceAllNonCharValue(Hardware)
                 .toLowerCase();
 
-        ReceivedTitleFromBag = transformer
-                .replaceAllNonCharValue(ReceivedTitleFromBag)
+        ReceivedHardwareFromBag = transformer
+                .replaceAllNonCharValue(ReceivedHardwareFromBag)
                 .toLowerCase();
 
-        if(!(FormattedTitle.contains(ReceivedTitleFromBag))){
-            throw new StringNotContainsByGivenException(FormattedTitle, ReceivedTitleFromBag);
+        if(!Objects.equals(FormattedHardware, ReceivedHardwareFromBag)){
+            throw new StringNotMatchByGivenException(FormattedHardware, ReceivedHardwareFromBag);
         }
     }
 }

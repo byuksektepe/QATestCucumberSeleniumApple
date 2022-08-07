@@ -31,7 +31,7 @@ public class ProductStepDefinitions implements StepDefinitionsInterface{
     }
 
     @Then("Verify product added to bag")
-    public void verifyProductAddedToBag() throws StringNotContainsByGivenException {
+    public void verifyProductAddedToBag() throws StringNotMatchByGivenException {
         bag.verifyProductAddedToBagByGiven(ReceivedProductTitle);
     }
 

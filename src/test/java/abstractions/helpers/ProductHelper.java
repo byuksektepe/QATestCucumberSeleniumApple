@@ -60,7 +60,7 @@ public class ProductHelper implements HelperInterface, UtilsInterface {
     public String getProductTitleByGiven(String Family){
         Family = Family.toLowerCase();
         switch (Family){
-            case _MAC: return customizeMac.getCustomizedMacTitle();
+            case _MAC: return customizeMac.getCustomizedMacHardware();
             default: return null;
         }
     }
