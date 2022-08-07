@@ -24,6 +24,7 @@ public class ProductHelper implements HelperInterface, UtilsInterface {
     }
 
     public void buyProductByGiven(String Family,
+                                  String ModelFamily,
                                   String Model)
 
             throws ModelNotMatchByGivenException {
@@ -32,7 +33,7 @@ public class ProductHelper implements HelperInterface, UtilsInterface {
         Model = Model.toLowerCase();
 
         switch (Family){
-            case _MAC: buyMac.selectMacModelByGiven(Model);
+            case _MAC: buyMac.selectMacModelByGiven(ModelFamily, Model);
                 break;
         }
     }

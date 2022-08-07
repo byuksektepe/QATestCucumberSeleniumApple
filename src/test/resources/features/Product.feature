@@ -17,5 +17,6 @@ Feature: Product
 
   Examples:
     | Family | Product     | Model | Configuration |
+    | Mac    | Macbook Air | M2    | Best          |
     | Mac    | Macbook Pro | 16"   | Ultimate      |
     | Mac    | Macbook Pro | 13"   | Good          |

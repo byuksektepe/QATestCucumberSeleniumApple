@@ -20,7 +20,7 @@ public class ProductStepDefinitions implements StepDefinitionsInterface{
     @And("Buy given: {string} product model")
     public void buyGivenProductModel(String Model)
             throws  ModelNotMatchByGivenException {
-        productHelper.buyProductByGiven(ProductFamily, Model);
+        productHelper.buyProductByGiven(ProductFamily, ModelFamily, Model);
         this.Model = Model;
     }
 

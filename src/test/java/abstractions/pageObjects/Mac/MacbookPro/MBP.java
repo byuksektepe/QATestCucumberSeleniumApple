@@ -14,14 +14,6 @@ public class MBP implements UtilsInterface {
     public static final String Name = "macbook pro";
 
 
-    /** Model Names **/
-    public static final String O13 = "13\"";
-    public static final String O14 = "14\"";
-    public static final String O16 = "16\"";
-
-
-
-
     public void buyMacbookPro13(){
         clickMethods.click(Locators.XPath, selectorMBP13Locator);
     }
