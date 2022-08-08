@@ -84,14 +84,25 @@ public class DriverWaits {
         }
     }
 
+    /**
+     * Method to long wait driver
+     * @return : WebDriverWait
+     */
     public Wait<WebDriver> waitLong() {
         return new WebDriverWait(driverManager.getDriver(), Duration.ofSeconds(Global.TIMEOUT_LONG));
     }
 
+    /**
+     * Method to short wait driver
+     * @return : WebDriverWait
+     */
     public Wait<WebDriver> waitShort() {
         return new WebDriverWait(driverManager.getDriver(), Duration.ofSeconds(Global.TIMEOUT_SHORT));
     }
 
+    /**
+     * Method to wait JavaScript load
+     */
     public void waitUntilJSReady() {
         final ExpectedCondition<Boolean> jsLoad = driver -> ((JavascriptExecutor) driverManager.getDriver())
                 .executeScript("return document.readyState")
@@ -106,6 +117,9 @@ public class DriverWaits {
         }
     }
 
+    /**
+     * Method to wait JQuery load
+     */
     public void waitForJQueryLoad() {
         final ExpectedCondition<Boolean> jQueryLoad = driver -> (
                 (Long) ((JavascriptExecutor) driverManager.getDriver()).executeScript("return jQuery.active") == 0);
