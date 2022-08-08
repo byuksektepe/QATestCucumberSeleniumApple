@@ -20,9 +20,9 @@ public class BuyMac implements UtilsInterface, MacInterface {
     /**
      * ! Only _MAC !
      * Method to select mac model by given;
-     * @param MacFamily
-     * @param MacModel
-     * @throws ModelNotMatchByGivenException
+     * @param MacFamily : String : @Constants.ProductFamily -> MAC_PRODUCT_FAMILY
+     * @param MacModel : String : @pageObjects.<MODEL_FAMILY>.Models
+     * @throws ModelNotMatchByGivenException : Fail
      */
     public void selectMacModelByGiven(String MacFamily, String MacModel) throws ModelNotMatchByGivenException {
         MacModel = MacModel.toLowerCase();
@@ -59,11 +59,11 @@ public class BuyMac implements UtilsInterface, MacInterface {
     /**
      * ! Only _MAC !
      * Method to select Mac configuration by given;
-     * @param MacModel
-     * @param MacFamily
-     * @param GivenConfig
-     * @throws ModelNotMatchByGivenException
-     * @throws ConfigurationNotMatchByDefinedException
+     * @param MacModel  : String : @pageObjects.<MODEL_FAMILY>.Models
+     * @param MacFamily : String : @Constants.ProductFamily -> MAC_PRODUCT_FAMILY
+     * @param GivenConfig : String : @pageObjects.<MODEL_FAMILY>.Models
+     * @throws ModelNotMatchByGivenException : Fail
+     * @throws ConfigurationNotMatchByDefinedException : Fail
      */
     public void selectMacConfigurationByGiven(String MacModel,
                                               String MacFamily,
