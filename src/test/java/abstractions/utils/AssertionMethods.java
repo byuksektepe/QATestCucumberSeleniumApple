@@ -6,7 +6,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import static abstractions.utils.Constants.Global.DELAY_SHORT;
-import static org.junit.Assert.fail;
 
 
 public class AssertionMethods extends AbstractHelper implements UtilsInterface
@@ -14,22 +13,35 @@ public class AssertionMethods extends AbstractHelper implements UtilsInterface
     private WebElement element = null;
 
     /**
-     * method to get element status - displayed?
-     *
+     * method to get element displayed status
      * @param locatorType : String : Locator type (id, name, class, xpath, css)
      * @param locatorValue : String : Locator value
-     * @return Boolean
+     * @return boolean : (True, False)
      */
     public boolean isElementDisplayed(String locatorType, String locatorValue) {
         element = getDriverWait().waitLong().until(ExpectedConditions.presenceOfElementLocated(selectElementByType.getelementbytype(locatorType, locatorValue)));
         isWait(DELAY_SHORT);
         return element.isDisplayed();
     }
+
+    /**
+     * Method to find any element
+     * @param locatorType  : String : Locator type (id, name, class, xpath, css)
+     * @param locatorValue : String : Locator value
+     * @return WebElement
+     */
     public WebElement findElement(String locatorType, String locatorValue){
 
         element = getDriverWait().waitShort().until(ExpectedConditions.presenceOfElementLocated(selectElementByType.getelementbytype(locatorType, locatorValue)));
         return element;
     }
+
+    /**
+     * Method to find element and ignore no such element error.
+     * @param locatorType  : String : Locator type (id, name, class, xpath, css)
+     * @param locatorValue : String : Locator value
+     * @return : WebElement or null
+     */
     public WebElement findElementAndIgnoreErrors(String locatorType, String locatorValue){
         try
         {
@@ -41,16 +53,31 @@ public class AssertionMethods extends AbstractHelper implements UtilsInterface
             return null;
         }
     }
+
+    /**
+     *
+     * @param element : WebElement : ElementName
+     * @return : boolean (True, False)
+     */
     public boolean isElementExists(WebElement element){
         if (element == null)
         { return false; }
         return true;
     }
 
+    /**
+     * Method to get current page title
+     * @return : String : PageTitle
+     */
     public String getPageTitle() {
         return getDriver().getTitle();
     }
 
+    /**
+     * Method to verify opened page by given;
+     * @param SearchQuery : String : search query in feature file
+     * @throws StringNotContainsByGivenException
+     */
     public void verifyOpenedPageByGiven(String SearchQuery) throws StringNotContainsByGivenException {
         String pageTitle = this.getPageTitle().toLowerCase();
         SearchQuery = SearchQuery.toLowerCase();
@@ -59,6 +86,10 @@ public class AssertionMethods extends AbstractHelper implements UtilsInterface
         }
     }
 
+    /**
+     * Method to wait driver
+     * @param ms : in milliseconds
+     */
     public void isWait(int ms)
     {
         try
@@ -74,8 +105,8 @@ public class AssertionMethods extends AbstractHelper implements UtilsInterface
     /**
      * method to get attribute value
      *
-     * @param locatorType    : String : Locator type (id, name, class, xpath, css)
-     * @param locatorValue    : String : Locator value
+     * @param locatorType   : String : Locator type (id, name, class, xpath, css)
+     * @param locatorValue  : String : Locator value
      * @param attributeName : String : attribute name
      * @return String
      */
@@ -87,7 +118,7 @@ public class AssertionMethods extends AbstractHelper implements UtilsInterface
     /**
      * Method to get element text
      *
-     * @param locatorType : String : Locator type (id, name, class, xpath, css)
+     * @param locatorType  : String : Locator type (id, name, class, xpath, css)
      * @param locatorValue : String : Locator value
      * @return String
      */
