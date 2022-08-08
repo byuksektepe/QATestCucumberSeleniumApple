@@ -15,5 +15,5 @@ public class ProductFamily {
     /** ! Do not change unless necessary ! **/
 
     public static final String[] MAC_PRODUCT_FAMILY = {"macbook air", "macbook pro",
-            "imac 24\"", "mac mini", "mac studio", "mac pro"};
+            "imac 24", "mac mini", "mac studio", "mac pro"};
 }

@@ -5,5 +5,8 @@ import abstractions.utils.UtilsInterface;
 
 public class MacStudio implements MacInterface, UtilsInterface {
 
+    public static final String Name = "mac studio";
+
+    public static final String[] DefinedConfigurations = {"better", "best"};
 
 }

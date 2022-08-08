@@ -11,8 +11,10 @@ import java.util.Objects;
 
 import abstractions.pageObjects.Mac.MacbookPro.MBP;
 import abstractions.pageObjects.Mac.MacbookAir.MBA;
-import  abstractions.pageObjects.Mac.MacbookPro.Models.*;
+import abstractions.pageObjects.Mac.IMac.IMac;
+import abstractions.pageObjects.Mac.MacbookPro.Models.*;
 import abstractions.pageObjects.Mac.MacbookAir.Models.*;
+import abstractions.pageObjects.Mac.IMac.Models.*;
 
 
 public class BuyMac implements UtilsInterface, MacInterface {
@@ -49,6 +51,14 @@ public class BuyMac implements UtilsInterface, MacInterface {
                     break;
                 case MBA_M2.Model:
                     mba.buyMacbookAirM2();
+                    break;
+                default:
+                    throw new ModelNotMatchByGivenException(MacModel);
+            }
+        } else if (Objects.equals(MacFamily, IMac.Name)) {
+            switch (MacModel){
+                case IMAC_24.Model:
+                    imac.buyIMac24();
                     break;
                 default:
                     throw new ModelNotMatchByGivenException(MacModel);
@@ -134,6 +144,21 @@ public class BuyMac implements UtilsInterface, MacInterface {
                         if(Objects.equals(defined_config, GivenConfig)){
                             String ProceedMainButtonLocator = "//button[@class='button button-block' and " +
                                     "contains(@data-autom, '13inch-" + defined_config + "')]";
+                            clickMethods.click(Locators.XPath, ProceedMainButtonLocator);
+                            isConfigEx = false;
+                            break;
+                        }
+                    }
+                    break;
+                default: throw new ModelNotMatchByGivenException(MacModel);
+            }
+        } else if (Objects.equals(MacFamily, IMac.Name)) {
+            switch (MacModel){
+                case IMAC_24.Model:
+                    for (String defined_config : IMAC_24.DefinedConfigurations){
+                        if(Objects.equals(defined_config, GivenConfig)){
+                            String ProceedMainButtonLocator = "//button[@class='button button-block' and " +
+                                    "contains(@data-autom, '24inch-" + defined_config + "')]";
                             clickMethods.click(Locators.XPath, ProceedMainButtonLocator);
                             isConfigEx = false;
                             break;

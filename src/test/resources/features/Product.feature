@@ -1,7 +1,6 @@
 Feature: Product
   You need to provide model linked with Family.
   Like: <Mac>    <Macbook Pro> <14">  [<Entry>?<Better>]
-  Or:   <Iphone> <Iphone 13>   <Pro>  [<Better>?<Ultimate>]
 
   @Smoke @Product
   Scenario Outline: Visitor should be able to add the product to the bag using navbar
@@ -17,6 +16,7 @@ Feature: Product
 
   Examples:
     | Family | Product     | Model | Configuration |
+    | Mac    | IMac 24     | 24"   | Better        |
     | Mac    | Macbook Air | M2    | Best          |
     | Mac    | Macbook Pro | 16"   | Ultimate      |
     | Mac    | Macbook Pro | 13"   | Good          |
