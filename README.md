@@ -60,7 +60,7 @@ Note that the web drivers in this project are adjusted according to my agent bro
 ### Clean File Architecture [Last Updated: 8/12/2022]
 
 ```
-📦 
+Main
 ├─ .gitignore
 ├─ .idea
 │  ├─ .gitignore
