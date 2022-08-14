@@ -12,9 +12,15 @@ import java.util.Objects;
 import abstractions.pageObjects.Mac.MacbookPro.MBP;
 import abstractions.pageObjects.Mac.MacbookAir.MBA;
 import abstractions.pageObjects.Mac.IMac.IMac;
+import abstractions.pageObjects.Mac.MacMini.MacMini;
+import abstractions.pageObjects.Mac.MacPro.MacPro;
+import abstractions.pageObjects.Mac.MacStudio.MacStudio;
+
 import abstractions.pageObjects.Mac.MacbookPro.Models.*;
 import abstractions.pageObjects.Mac.MacbookAir.Models.*;
 import abstractions.pageObjects.Mac.IMac.Models.*;
+import abstractions.pageObjects.Mac.MacMini.Models.*;
+import abstractions.pageObjects.Mac.MacStudio.Models.*;
 
 
 public class BuyMac implements UtilsInterface, MacInterface {
@@ -63,7 +69,7 @@ public class BuyMac implements UtilsInterface, MacInterface {
                 default:
                     throw new ModelNotMatchByGivenException(MacModel);
             }
-        }
+        } else if (Objects.equals(MacFamily, ))
     }
 
     /**
