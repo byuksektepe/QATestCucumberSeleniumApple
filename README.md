@@ -7,7 +7,7 @@
  ![TEST-003-A](https://img.shields.io/badge/TEST%20003%20A-000000?style=for-the-badge&logo=null&logoColor=white)
 <a href="https://github.com/Berkantyuks/QA-Project-Test-Classification-Mark#test-class-a" rel="tc-a"><img width="79px" style="border-width: 0;" src="https://github.com/Berkantyuks/QA-Project-Test-Classification-Mark/blob/main/TCM-114x40/114x40-tc-a.png" alt="tc-a" /></a>
 
-<p>Software All-Encompassing QA Test Project For Apple. Using Cucumber JVM BDD with Selenium and JUnit 5 Test Framework. TeamCity was used as CI/CD. Maven used as Runner and Builder. Automated tests are Designed for be Easy-To-Read, Easy-To-Maintain and Easy-To-Understand. OOP used. Includes only smoke tests, regression and integration tests will be added later. The tests will be perform 100% automation 0% manually. The tests are optimized for Chrome, Edge, Firefox and Safari browsers.</p>
+<p>Software All-Encompassing QA Test Project For Apple. Using Cucumber JVM BDD with Selenium and JUnit 5 Test Framework. TeamCity was used as CI/CD. Maven used as Runner and Builder. Automated tests are Designed for be Easy-To-Read, Easy-To-Maintain, Easy-To-Understand and Long-Use. OOP and Clean File Architecture used. Includes only smoke tests, regression, integration and ad-hoc tests will be added later. The tests will be perform 100% automation 0% manually. The tests are optimized for Chrome, Edge, Firefox and Safari browsers.</p>
 
 The entire project is designed to be run and built with Maven. If you want to run and build with JUnit 5, you need to make some changes to the project.
 
