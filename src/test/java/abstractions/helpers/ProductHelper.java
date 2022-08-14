@@ -10,7 +10,7 @@ import static abstractions.utils.Constants.ProductFamily._MAC;
 
 public class ProductHelper implements HelperInterface, UtilsInterface {
 
-    private static final String AddToBagButtonLocator = "//button[@value='add-to-cart']";
+    private static final String AddToBagButtonLocator = "//button[@data-autom='addToCart']";
     private static final String ReviewBagButtonLocator = "//button[@title='Review Bag']";
 
     public void redirectToProductByGiven(String Family,

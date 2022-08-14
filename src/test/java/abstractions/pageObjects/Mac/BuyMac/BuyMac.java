@@ -178,6 +178,21 @@ public class BuyMac implements UtilsInterface, MacInterface {
                     break;
                 default: throw new ModelNotMatchByGivenException(MacModel);
             }
+        } else if (Objects.equals(MacFamily, MacMini.Name)){
+            switch (MacModel){
+                case MacMini_All.Model:
+                    for (String defined_config : MacMini_All.DefinedConfigurations){
+                        if(Objects.equals(defined_config, GivenConfig)){
+                            String ProceedMainButtonLocator = "//button[@class='button button-block' and " +
+                                    "contains(@data-autom, 'null-" + defined_config + "')]";
+                            clickMethods.click(Locators.XPath, ProceedMainButtonLocator);
+                            isConfigEx = false;
+                            break;
+                        }
+                    }
+                    break;
+                default: throw new ModelNotMatchByGivenException(MacModel);
+            }
         }
         if (isConfigEx) { throw new ConfigurationNotMatchByDefinedException(GivenConfig);
         }

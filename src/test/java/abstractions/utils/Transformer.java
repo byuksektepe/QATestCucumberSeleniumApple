@@ -7,7 +7,15 @@ public class Transformer {
      * @param s : String
      * @return : String : Only Char String
      */
-    public String replaceAllNonCharValue(String s) {
+    public String replaceAllNonCharValueToVoid(String s) {
         return s.replaceAll("[^a-zA-Z]", "");
+    }
+
+    public String replaceAllUnWantedValueToVoid(String s,  String[] uws){
+        for (String unwanted : uws ) {
+
+            s.replace(unwanted, "");
+        }
+        return s;
     }
 }

@@ -16,6 +16,7 @@ Feature: Product
 
   Examples:
     | Family | Product     | Model | Configuration |
+    | Mac    | Mac Mini    | All   | Better        |
     | Mac    | IMac 24     | 24"   | Better        |
     | Mac    | Macbook Air | M2    | Best          |
     | Mac    | Macbook Pro | 16"   | Ultimate      |

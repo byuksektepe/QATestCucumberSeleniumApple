@@ -1,10 +1,8 @@
 package abstractions.pageObjects;
 
-import abstractions.utils.Exceptions.StringNotContainsByGivenException;
 import abstractions.utils.Exceptions.StringNotMatchByGivenException;
 import abstractions.utils.Locators;
 import abstractions.utils.UtilsInterface;
-import org.openqa.selenium.By;
 
 import java.util.Objects;
 
@@ -19,17 +17,17 @@ public class Bag implements UtilsInterface {
      */
     public void verifyProductAddedToBagByGiven(String Hardware) throws StringNotMatchByGivenException {
 
-        assertionMethods.isWait(1000);
+        assertionMethods.isWait(1100);
         String ReceivedHardwareFromBag = assertionMethods
                 .getElementAttribute(Locators
                         .XPath, ProductHardwareInBagLocator, "textContent");
 
         String FormattedHardware = transformer
-                .replaceAllNonCharValue(Hardware)
+                .replaceAllNonCharValueToVoid(Hardware)
                 .toLowerCase();
 
         ReceivedHardwareFromBag = transformer
-                .replaceAllNonCharValue(ReceivedHardwareFromBag)
+                .replaceAllNonCharValueToVoid(ReceivedHardwareFromBag)
                 .toLowerCase();
 
         if(!Objects.equals(FormattedHardware, ReceivedHardwareFromBag)){
