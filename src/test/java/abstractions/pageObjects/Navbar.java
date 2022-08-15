@@ -30,16 +30,33 @@ public class Navbar implements UtilsInterface {
     private static final String SearchButtonLocator = NavbarMainLocator+"//li[contains(@class, 'ac-gn-search') " +
                                                                         "and @role='search']";
     private static final String SearchInputLocator = NavbarMainLocator+"//input[@id='ac-gn-searchform-input']";
+
+    /**
+     * Method to verify navbar is visible before navigate
+     * Its needs to use only first page load
+     * @throws NoSuchElementException : Error : Navbar Element Is Not Visible
+     */
     public void VerifyNavbarIsVisible(){
 
         Boolean NavbarVerify = assertionMethods.isElementDisplayed(Locators.XPath, NavbarMainLocator);
         if(!NavbarVerify){ throw new NoSuchElementException("Navbar Element Is Not Visible"); }
     }
 
+    /**
+     * Method to click search button in navbar
+     */
     public void ClickSearchButton(){
         clickMethods.click(Locators.XPath, SearchButtonLocator);
     }
 
+    /**
+     * Method to navigate navbar by given;
+     * @param navbarItem : String : @Constants.Global -> APPLE_NAVBAR_ITEMS
+     * @throws NoSuchMethodException : Error
+     * @throws InvocationTargetException : Error
+     * @throws IllegalAccessException : Error
+     * @throws NavbarItemNotMatchByGivenException : Fail
+     */
     public void navigateNavbarByGiven(String navbarItem)
             throws NoSuchMethodException,
             InvocationTargetException,
@@ -61,10 +78,20 @@ public class Navbar implements UtilsInterface {
         if(isEx)  { throw new NavbarItemNotMatchByGivenException(navbarItem); }
     }
 
+    /** Pre-Defined Navbar Navigation Methods **/
+
     public static void _logo() { clickMethods.click(Locators.XPath, LogoLocator); }
     public static void _store() { clickMethods.click(Locators.XPath, StoreLocator); }
     public static void _mac() { clickMethods.click(Locators.XPath, MacLocator); }
 
+    /** Pre-Defined Navbar Navigation Methods **/
+
+
+    /**
+     * Method to enter search query in navbar and hit enter for...
+     * ...execute search
+     * @param SearchQuery : String
+     */
     public void EnterSearchQueryInSearchBar(String SearchQuery){
         inputMethods.enterTextAndHitEnter(Locators.XPath,
                                           SearchQuery, SearchInputLocator);

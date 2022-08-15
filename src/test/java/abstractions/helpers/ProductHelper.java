@@ -25,7 +25,9 @@ public class ProductHelper implements HelperInterface, UtilsInterface {
             throws MacFamilyNotMatchByGivenException {
         Family = Family.toLowerCase();
         switch (Family){
-            case _MAC: mac.selectMacFamilyByGiven(ModelFamily);
+            case _MAC: mac
+                       .selectMacFamilyByGiven(ModelFamily);
+            break;
         }
     }
 
@@ -46,8 +48,9 @@ public class ProductHelper implements HelperInterface, UtilsInterface {
         Model = Model.toLowerCase();
 
         switch (Family){
-            case _MAC: buyMac.selectMacModelByGiven(ModelFamily, Model);
-                break;
+            case _MAC: buyMac
+                       .selectMacModelByGiven(ModelFamily, Model);
+            break;
         }
     }
 
@@ -74,8 +77,9 @@ public class ProductHelper implements HelperInterface, UtilsInterface {
         Config = Config.toLowerCase();
 
         switch (Family){
-            case _MAC: buyMac.selectMacConfigurationByGiven(Model, ModelFamily, Config);
-                break;
+            case _MAC: buyMac
+                       .selectMacConfigurationByGiven(Model, ModelFamily, Config);
+            break;
         }
     }
 
@@ -87,7 +91,9 @@ public class ProductHelper implements HelperInterface, UtilsInterface {
     public String getProductTitleByGiven(String Family){
         Family = Family.toLowerCase();
         switch (Family){
-            case _MAC: return customizeMac.getCustomizedMacHardware();
+            case _MAC: return customizeMac
+                              .getCustomizedMacHardware();
+
             default: return null;
         }
     }
@@ -95,10 +101,13 @@ public class ProductHelper implements HelperInterface, UtilsInterface {
     /**
      * Method to add product to bag
      */
-    public void addProductToTheBag(){
-        clickMethods.click(Locators.XPath, AddToBagButtonLocator);
+    public void addProductToTheBag(){ clickMethods
+                .click(Locators.XPath, AddToBagButtonLocator);
 
-        boolean isElDisplayed = assertionMethods.isElementDisplayed(Locators.XPath, ReviewBagButtonLocator);
-        if(isElDisplayed){ clickMethods.click(Locators.XPath, ReviewBagButtonLocator); }
+        boolean isElDisplayed = assertionMethods
+                .isElementDisplayed(Locators.XPath, ReviewBagButtonLocator);
+
+        if(isElDisplayed){ clickMethods
+                .click(Locators.XPath, ReviewBagButtonLocator); }
     }
 }
