@@ -45,6 +45,9 @@ https://github.com/Berkantyuks/QATestCucumberSeleniumApple.git
 ```
 https://github.com/<your_username>/QATestCucumberSeleniumApple.git
 ```
+### Test Automation WorkFlow
+<img src="https://github.com/Berkantyuks/QATestCucumberSeleniumApple/blob/main/src/test/resources/workflow/images/apple-test-automation-workflow.png"/>
+
 ### Execute Tests Using Maven
 
 Command Prompt/Power Shell (Windows OS) or Open terminal (for MAC OSX) or and navigate to the project directory type ```mvn clean test``` command to run features. With this command it will invoke the default Chrome and will execute the tests.
