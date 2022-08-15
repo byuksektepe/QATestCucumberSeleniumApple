@@ -1,6 +1,6 @@
 Feature: Product
   You need to provide model linked with Family.
-  Like: <Mac>    <Macbook Pro> <14">  [<Entry>?<Better>]
+  Like: <Mac>  <Macbook Pro> <14">  [<Good>?<Better>]
 
   @Smoke @Product
   Scenario Outline: Visitor should be able to add the product to the bag using navbar
