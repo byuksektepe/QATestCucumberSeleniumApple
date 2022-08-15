@@ -13,7 +13,7 @@ public class AssertionMethods extends AbstractHelper implements UtilsInterface
     private WebElement element = null;
 
     /**
-     * method to get element displayed status
+     * Method to get element displayed status
      * @param locatorType : String : Locator type (id, name, class, xpath, css)
      * @param locatorValue : String : Locator value
      * @return boolean : (True, False)

@@ -1,6 +1,7 @@
 package abstractions.utils;
 
 import abstractions.helpers.AbstractHelper;
+import org.jetbrains.annotations.NotNull;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.Keys;
@@ -9,20 +10,25 @@ import org.openqa.selenium.Keys;
 public class InputMethods extends AbstractHelper implements UtilsInterface {
 
     /**
-     * Method to enter text into text field
-     * @note not nullable
+     * Method to enter text into text field and hit enter
      * @param locatorType : String : Locator type (id, name, class, xpath, css)
-     * @param text       : String : Text value to enter in field
+     * @param text       : String : Text value to enter in field : NOT NULL
      * @param locatorValue : String : Locator value
      */
-    public void enterTextAndHitEnter(String locatorType, String text, String locatorValue) {
+    public void enterTextAndHitEnter(String locatorType, @NotNull String  text, String locatorValue) {
         getDriverWait().waitShort().until(ExpectedConditions.presenceOfElementLocated(selectElementByType.getelementbytype(locatorType, locatorValue)));
         WebElement element = getDriver().findElement(selectElementByType.getelementbytype(locatorType, locatorValue));
         element.sendKeys(text);
         element.sendKeys(Keys.ENTER);
     }
 
-    public void enterText(String locatorType, String text, String locatorValue) {
+    /**
+     * Method to enter text into text field
+     * @param locatorType : String : Locator type (id, name, class, xpath, css)
+     * @param text       : String : Text value to enter in field : NOT NULL
+     * @param locatorValue : String : Locator value
+     */
+    public void enterText(String locatorType, @NotNull String text, String locatorValue) {
         getDriverWait().waitShort().until(ExpectedConditions.presenceOfElementLocated(selectElementByType.getelementbytype(locatorType, locatorValue)));
         WebElement element = getDriver().findElement(selectElementByType.getelementbytype(locatorType, locatorValue));
         element.sendKeys(text);
