@@ -15,7 +15,8 @@ public class DriverManager {
 
     /**
      * Default driver is edge. because pre-installed in windows devices.
-     * @return webdriver
+     * If you are using MacOs, change default driver to SafariDriver()
+     * @return WebDriver
      */
     private WebDriver choseDriver() {
         String preferredDriver = getDriverProperty();
@@ -56,9 +57,9 @@ public class DriverManager {
 
     /**
      * Gets Browser selection from VM Options setting.
-     * Arguments: key: -Ddrivers.browser=<broswer>
-     * Arguments: def: <broswer>
-     * Possible Options: chrome, edge, firefox
+     * Arguments: key: -Ddrivers.browser=<browser>
+     * Arguments: def: <browser>
+     * Possible Options: chrome, edge, firefox and safari (in Mac OS)
      * @return String
      */
     private String getDriverProperty(){
