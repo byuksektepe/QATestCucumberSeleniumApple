@@ -5,6 +5,7 @@
  ![Selenium](https://img.shields.io/badge/Selenium-000000?style=for-the-badge&logo=Selenium&logoColor=white)
  ![TeamCity](https://img.shields.io/badge/TeamCity-000000?style=for-the-badge&logo=TeamCity&logoColor=white)
  ![TEST-003-A](https://img.shields.io/badge/TEST%20003%20A-000000?style=for-the-badge&logo=null&logoColor=white)
+  <a href="https://github.com/Berkantyuks/QA-Project-Test-Classification-Mark" rel="tc-ff"><img width="79px" style="border-width: 0;" src="https://github.com/Berkantyuks/QA-Project-Test-Classification-Mark/blob/main/TCM-F-114x40/114x40-ff.png" alt="tc-ff" /></a>
 <a href="https://github.com/Berkantyuks/QA-Project-Test-Classification-Mark" rel="tc-bb"><img width="79px" style="border-width: 0;" src="https://github.com/Berkantyuks/QA-Project-Test-Classification-Mark/blob/main/TCM-114x40-box/114x40-bb.png" alt="tc-bb" /></a>
 <a href="https://github.com/Berkantyuks/QA-Project-Test-Classification-Mark#test-class-a" rel="tc-a"><img width="79px" style="border-width: 0;" src="https://github.com/Berkantyuks/QA-Project-Test-Classification-Mark/blob/main/TCM-114x40-light/114x40-tc-a.png" alt="tc-a" /></a>
 
