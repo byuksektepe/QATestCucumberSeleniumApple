@@ -1,6 +1,6 @@
 ﻿## QA Apple Automated Tests With Cucumber JVM and Maven Build
  ![Java](https://img.shields.io/badge/java-000000.svg?style=for-the-badge&logo=java&logoColor=white)
- ![JUnit](https://img.shields.io/badge/Junit5-000000?style=for-the-badge&logo=junit5&logoColor=white)
+ ![JUnit](https://img.shields.io/badge/Junit-000000?style=for-the-badge&logo=junit5&logoColor=white)
  ![Maven](https://img.shields.io/badge/Maven-000000?style=for-the-badge&logo=apachemaven&logoColor=white)
  ![Selenium](https://img.shields.io/badge/Selenium-000000?style=for-the-badge&logo=Selenium&logoColor=white)
  ![TeamCity](https://img.shields.io/badge/TeamCity-000000?style=for-the-badge&logo=TeamCity&logoColor=white)
